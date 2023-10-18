@@ -6,7 +6,7 @@
 /*   By: ldeville <ldeville@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/18 12:19:22 by ldeville          #+#    #+#             */
-/*   Updated: 2023/10/18 13:55:45 by ldeville         ###   ########.fr       */
+/*   Updated: 2023/10/18 17:37:33 by ldeville         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,16 +14,20 @@
 # define CONTACT_HPP
 
 class Contact {
-
+	
 private :
-	std::string 
+	std::string _fname;
+	std::string _lname;
+	std::string _nickname;
+	std::string _phone_num;
+	std::string _secret;
 
 public :
-	Contact::Contact(void);
-	Contact::~Contact(void);
+	Contact(void);
+	~Contact(void);
 	
-
-	
+	void	SetContact(std::string a, std::string b, std::string c, std::string d, std::string e);
+	void	DisplayContact(void);
 };
 
 

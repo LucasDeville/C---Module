@@ -1,35 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Contact.cpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ldeville <ldeville@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/18 10:48:03 by ldeville          #+#    #+#             */
-/*   Updated: 2023/10/18 17:27:59 by ldeville         ###   ########.fr       */
+/*   Created: 2023/10/18 14:17:54 by ldeville          #+#    #+#             */
+/*   Updated: 2023/10/18 18:21:00 by ldeville         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "common.h"
 
-int	main(void)
-{
-	int			exit;
-	std::string	read;
-	PhoneBook	Phonebook;
+Contact::Contact(void) {
 
-	exit = 0;
-	while (!exit)
+}
+
+Contact::~Contact(void) {
+
+}
+
+void	Contact::SetContact(std::string a, std::string b, std::string c, std::string d, std::string e) {
+	_fname = a;
+	_lname = b;
+	_nickname = c;
+	_phone_num = d;
+	_secret = e;
+}
+
+void	Contact::DisplayContact(void) {
+	if (_fname.empty())
 	{
-		std::getline(std::cin,read);
-		if (read.compare("ADD") == 0)
-			Phonebook.AddContact();
-		else if (read.compare("SEARCH") == 0)
-			Phonebook.GetContact();
-		else if (read.compare("EXIT") == 0)
-			exit++;
-		else
-			std::cout << "Please enter a valid command : ADD, SEARCH or EXIT." << std::endl;
+		std::cout << "This contact does not exist yet." << std::endl;
+		return ;
 	}
-	return (0);
+	/*
+		DISPLAY CONTACT
+	*/
 }
