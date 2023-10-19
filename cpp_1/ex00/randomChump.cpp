@@ -6,12 +6,12 @@
 /*   By: ldeville <ldeville@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/19 17:26:41 by ldeville          #+#    #+#             */
-/*   Updated: 2023/10/19 17:45:29 by ldeville         ###   ########.fr       */
+/*   Updated: 2023/10/19 18:16:11 by ldeville         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Zombie.hpp"
 
 void randomChump(std::string name) {
-	Zombie zombie (name);
+	Zombie zombie(name);
 }

@@ -6,7 +6,7 @@
 /*   By: ldeville <ldeville@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/19 17:26:51 by ldeville          #+#    #+#             */
-/*   Updated: 2023/10/19 17:44:40 by ldeville         ###   ########.fr       */
+/*   Updated: 2023/10/19 18:25:25 by ldeville         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 #define __ZOMBIE_HPP__
 
 #include <iostream>
-class Zombie {
 
+class Zombie {
 private :
 	std::string	_name;
 
