@@ -6,7 +6,7 @@
 /*   By: ldeville <ldeville@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/18 12:19:22 by ldeville          #+#    #+#             */
-/*   Updated: 2023/10/19 10:57:12 by ldeville         ###   ########.fr       */
+/*   Updated: 2023/10/19 13:56:41 by ldeville         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,11 +26,11 @@ public :
 	Contact(void);
 	~Contact(void);
 	
-	void	SetContact(std::string a, std::string b, std::string c, std::string d, std::string e);
-	void	DisplayContact(void);
-	void	InfosContacts(int index);
-	bool	EmptyContact(void) { return _fname.empty(); };
+	std::string	CheckLen(std::string str);
+	void		SetContact(std::string a, std::string b, std::string c, std::string d, std::string e);
+	void		DisplayContact(void);
+	void		InfosContacts(int index);
+	bool		EmptyContact(void) { return _fname.empty(); };
 };
-
 
 #endif

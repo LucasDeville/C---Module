@@ -6,7 +6,7 @@
 /*   By: ldeville <ldeville@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/18 12:17:21 by ldeville          #+#    #+#             */
-/*   Updated: 2023/10/19 12:25:16 by ldeville         ###   ########.fr       */
+/*   Updated: 2023/10/19 14:21:37 by ldeville         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,9 @@ void PhoneBook::AddContact(void) {
 	else
 	{
 		std::cout << "Contact num " << (_index % 8 + 1) << " replaced successfully !" << std::endl;
-		_index = 1;
+		_index++;
+		if (_index == 8)
+			_index = 0;
 	}
 }
 
@@ -57,13 +59,12 @@ void	PhoneBook::GetContact(void){
 	std::cout << "|" << std::setw(10) << "First Name";
 	std::cout << "|" << std::setw(10) << "Last Name";
 	std::cout << "|" << std::setw(10) << "Nickname" << "|" << std::endl;
-	for(int i = 0; i < 9; i++) 
+	for(int i = 0; i < 8; i++) 
 	{
 		if (_contact[i].EmptyContact())
 			break;
 		_contact[i].InfosContacts(i + 1);
 	}
-	std::cout << std::endl;
 	std::cout << "[//]" << std::endl;
 	GetContactAt();
 }

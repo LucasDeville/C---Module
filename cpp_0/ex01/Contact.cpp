@@ -6,7 +6,7 @@
 /*   By: ldeville <ldeville@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/18 14:17:54 by ldeville          #+#    #+#             */
-/*   Updated: 2023/10/19 11:07:18 by ldeville         ###   ########.fr       */
+/*   Updated: 2023/10/19 14:00:02 by ldeville         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,12 +20,21 @@ Contact::~Contact(void) {
 
 }
 
+std::string	Contact::CheckLen(std::string str) {
+	if (str.length() > 10)
+	{
+		str.resize(9);
+		str.resize(10, '.');
+	}
+	return (str);
+}
+
 void	Contact::SetContact(std::string a, std::string b, std::string c, std::string d, std::string e) {
-	_fname = a;
-	_lname = b;
-	_nickname = c;
-	_phone_num = d;
-	_secret = e;
+	_fname = CheckLen(a);
+	_lname = CheckLen(b);
+	_nickname = CheckLen(c);
+	_phone_num = CheckLen(d);
+	_secret = CheckLen(e);
 }
 
 void	Contact::InfosContacts(int index) {
