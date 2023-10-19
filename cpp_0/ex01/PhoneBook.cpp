@@ -6,7 +6,7 @@
 /*   By: ldeville <ldeville@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/18 12:17:21 by ldeville          #+#    #+#             */
-/*   Updated: 2023/10/19 14:21:37 by ldeville         ###   ########.fr       */
+/*   Updated: 2023/10/19 17:16:02 by ldeville         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -94,16 +94,26 @@ void	PhoneBook::GetContactAt(void) {
 	_contact[contact_num - 1].DisplayContact();
 }
 
+bool	PhoneBook::HasSpace(std::string str) {
+	bool	space;
+
+	space = false;
+	for (int i = 0; i < str.size(); ++i)
+		if ((char)str[i] == ' ' || (char)str[i] == '	')
+			space = true;;
+	return (space);
+}
+
 std::string PhoneBook::GetInfos(std::string type) {
 	std::string	str;
 
 	str = "";
-	while (str.empty())
+	while (str.empty() || HasSpace(str))
 	{
 		std::cout << type << ": ";
 		std::getline(std::cin,str);
-		if (str.empty())
-			std::cout << "This field cannot be empty !" << std::endl;
+		if (str.empty() || HasSpace(str))
+			std::cout << "This field cannot be empty or contain spaces !" << std::endl;
 	}
 	return (str);
 }
