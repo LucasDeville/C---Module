@@ -6,7 +6,7 @@
 /*   By: ldeville <ldeville@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/18 12:14:31 by ldeville          #+#    #+#             */
-/*   Updated: 2023/10/18 17:28:11 by ldeville         ###   ########.fr       */
+/*   Updated: 2023/10/19 12:17:54 by ldeville         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,8 @@ public :
 
 	void		AddContact(void);
 	void		GetContact(void);
+	void		GetContactAt(void);
+	std::string	IsNum(std::string str);
 	std::string	GetInfos(std::string type);
 	
 };

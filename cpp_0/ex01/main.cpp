@@ -6,7 +6,7 @@
 /*   By: ldeville <ldeville@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/18 10:48:03 by ldeville          #+#    #+#             */
-/*   Updated: 2023/10/18 17:27:59 by ldeville         ###   ########.fr       */
+/*   Updated: 2023/10/19 11:10:02 by ldeville         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,11 @@ int	main(void)
 	PhoneBook	Phonebook;
 
 	exit = 0;
+	std::cout << "***************************************" << std::endl;
+	std::cout << "*Welcome to your personnal PhoneBook !*" << std::endl;
+	std::cout << "***************************************" << std::endl;
+	std::cout << "*Type ADD / SEARCH or EXIT to interact*" << std::endl;
+	std::cout << "***************************************" << std::endl;
 	while (!exit)
 	{
 		std::getline(std::cin,read);
@@ -30,6 +35,9 @@ int	main(void)
 			exit++;
 		else
 			std::cout << "Please enter a valid command : ADD, SEARCH or EXIT." << std::endl;
+		std::cout << "***************************************" << std::endl;
+		std::cout << "*Type ADD / SEARCH or EXIT to interact*" << std::endl;
+		std::cout << "***************************************" << std::endl;
 	}
 	return (0);
 }

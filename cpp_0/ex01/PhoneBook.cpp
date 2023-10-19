@@ -6,7 +6,7 @@
 /*   By: ldeville <ldeville@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/18 12:17:21 by ldeville          #+#    #+#             */
-/*   Updated: 2023/10/18 17:37:06 by ldeville         ###   ########.fr       */
+/*   Updated: 2023/10/19 12:25:16 by ldeville         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,20 +51,46 @@ void PhoneBook::AddContact(void) {
 }
 
 void	PhoneBook::GetContact(void){
-	int	contact_num;
 
-	contact_num = std::stoi(GetInfos("Enter the contact number you want to search"));
-	if (contact_num < 0 || contact_num > 8)
+	std::cout << "[//]" << std::endl;
+	std::cout << "|" << std::setw(10) << "Index";
+	std::cout << "|" << std::setw(10) << "First Name";
+	std::cout << "|" << std::setw(10) << "Last Name";
+	std::cout << "|" << std::setw(10) << "Nickname" << "|" << std::endl;
+	for(int i = 0; i < 9; i++) 
 	{
-		std::cout << "Please enter a number between 0 and 8 !" << std::endl;
-		while (contact_num < 0 || contact_num > 8)
+		if (_contact[i].EmptyContact())
+			break;
+		_contact[i].InfosContacts(i + 1);
+	}
+	std::cout << std::endl;
+	std::cout << "[//]" << std::endl;
+	GetContactAt();
+}
+
+std::string	PhoneBook::IsNum(std::string str) {
+	
+	if (str.length() == 1 && isdigit((char)str[0]))
+		return (str);
+	else
+		return ("0");
+}
+
+void	PhoneBook::GetContactAt(void) {
+	int			contact_num;
+
+	contact_num = std::stoi(IsNum(GetInfos("Enter the contact number you want to search")));
+	if (contact_num < 1 || contact_num > 8)
+	{
+		std::cout << "Please enter a number between 0 and 9 !" << std::endl;
+		while (contact_num < 1 || contact_num > 8)
 		{
-			contact_num = std::stoi(GetInfos("Enter the contact number you want to search"));
-			if (contact_num < 0 || contact_num > 8)
-				std::cout << "Please enter a number between 0 and 8 !" << std::endl;
+			contact_num = std::stoi(IsNum(GetInfos("Enter the contact number you want to search")));
+			if (contact_num < 1 || contact_num > 8)
+				std::cout << "Please enter a number between 0 and 9 !" << std::endl;
 		}
 	}
-	_contact[contact_num].DisplayContact();
+	_contact[contact_num - 1].DisplayContact();
 }
 
 std::string PhoneBook::GetInfos(std::string type) {
