@@ -1,25 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Zombie.cpp                                         :+:      :+:    :+:   */
+/*   Weapon.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ldeville <ldeville@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/19 17:26:41 by ldeville          #+#    #+#             */
-/*   Updated: 2023/10/22 12:17:56 by ldeville         ###   ########.fr       */
+/*   Created: 2023/10/23 09:19:09 by ldeville          #+#    #+#             */
+/*   Updated: 2023/10/23 10:22:34 by ldeville         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
+#include "Weapon.hpp"
 
-Zombie::Zombie (std::string str) : _name(str) { 
-	announce();
+Weapon::Weapon() {
+	
 }
 
-Zombie::~Zombie (void) {
-	std::cout << "Destroying zombie named " << _name << std::endl;
+Weapon::Weapon(std::string type) {
+	this->_type = type;
 }
 
-void	Zombie::announce(void) {
-	std::cout << _name << ": BraiiiiiiinnnzzzZ..." << std::endl;
+Weapon::~Weapon() {
+}
+
+std::string	Weapon::getType() const {
+	return this->_type;
+}
+
+void	Weapon::setType(std::string stype) {
+	this->_type = stype;
 }

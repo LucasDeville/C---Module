@@ -1,25 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Zombie.cpp                                         :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ldeville <ldeville@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/19 17:26:41 by ldeville          #+#    #+#             */
-/*   Updated: 2023/10/22 12:17:56 by ldeville         ###   ########.fr       */
+/*   Created: 2023/10/19 17:25:03 by ldeville          #+#    #+#             */
+/*   Updated: 2023/10/22 12:46:53 by ldeville         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
+#include <iostream>
 
-Zombie::Zombie (std::string str) : _name(str) { 
-	announce();
-}
+int	main(void) {
+	
+	std::string	str = "HI THIS IS BRAIN";
+	std::string* stringPTR = &str; 	
+	std::string& stringREF = str;
+	
+	std::cout << &str << std::endl; 	
+	std::cout << stringPTR << std::endl; 	
+	std::cout << &stringREF << std::endl << std::endl; 	
+	
+	std::cout << str << std::endl;
+	std::cout << *stringPTR << std::endl;
+	std::cout << stringREF << std::endl;
 
-Zombie::~Zombie (void) {
-	std::cout << "Destroying zombie named " << _name << std::endl;
-}
-
-void	Zombie::announce(void) {
-	std::cout << _name << ": BraiiiiiiinnnzzzZ..." << std::endl;
+	return (0);
 }

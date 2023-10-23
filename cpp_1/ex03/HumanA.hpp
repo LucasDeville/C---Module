@@ -1,25 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Zombie.cpp                                         :+:      :+:    :+:   */
+/*   HumanA.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ldeville <ldeville@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/19 17:26:41 by ldeville          #+#    #+#             */
-/*   Updated: 2023/10/22 12:17:56 by ldeville         ###   ########.fr       */
+/*   Created: 2023/10/23 09:23:33 by ldeville          #+#    #+#             */
+/*   Updated: 2023/10/23 11:30:58 by ldeville         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
+#ifndef __HUMANA_HPP__
+#define __HUMANA_HPP__
 
-Zombie::Zombie (std::string str) : _name(str) { 
-	announce();
-}
+#include "Weapon.hpp"
 
-Zombie::~Zombie (void) {
-	std::cout << "Destroying zombie named " << _name << std::endl;
-}
+class HumanA {
 
-void	Zombie::announce(void) {
-	std::cout << _name << ": BraiiiiiiinnnzzzZ..." << std::endl;
-}
+private:
+
+	std::string	_name;
+	Weapon*		_weapon;
+
+public:
+
+	HumanA(std::string name, Weapon& weapon);
+	~HumanA();
+
+	void attack() const;
+};
+
+#endif
