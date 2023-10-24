@@ -6,7 +6,7 @@
 /*   By: ldeville <ldeville@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/23 11:28:09 by ldeville          #+#    #+#             */
-/*   Updated: 2023/10/23 11:32:01 by ldeville         ###   ########.fr       */
+/*   Updated: 2023/10/24 10:52:22 by ldeville         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,16 +19,20 @@ class Harl {
 
 private:
 
-	void	debug();
-	void	info();
-	void	warning();
-	void	error();
+	void	debug(void);
+	void	info(void);
+	void	warning(void);
+	void	error(void);
 
 public:
 
-	Harl::Harl();
-	Harl::~Harl();
+	Harl(void);
+	~Harl(void);
 
+	std::string	type[4] = {"DEBUG", "INFO", "WARNING", "ERROR"};
+	void		(Harl::*ptr[4])(void) = {&Harl::debug, &Harl::info, &Harl::warning, &Harl::error};
+
+	void	complain( std::string level );
 };
 
 #endif
