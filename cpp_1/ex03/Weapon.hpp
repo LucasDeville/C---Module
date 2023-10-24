@@ -6,7 +6,7 @@
 /*   By: ldeville <ldeville@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/22 12:54:07 by ldeville          #+#    #+#             */
-/*   Updated: 2023/10/23 10:22:45 by ldeville         ###   ########.fr       */
+/*   Updated: 2023/10/24 10:21:18 by ldeville         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,11 +23,11 @@ private:
 
 public:
 
-	Weapon();
+	Weapon(void);
 	Weapon(std::string type);
 	~Weapon();
 
-	std::string getType() const;
+	std::string getType(void) const;
 	void		setType(std::string stype);
 	
 };
