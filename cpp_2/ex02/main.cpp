@@ -1,37 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Fixed.hpp                                          :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ldeville <ldeville@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/24 12:54:57 by ldeville          #+#    #+#             */
-/*   Updated: 2023/10/25 16:11:15 by ldeville         ###   ########.fr       */
+/*   Created: 2023/10/19 17:25:03 by ldeville          #+#    #+#             */
+/*   Updated: 2023/10/25 17:55:12 by ldeville         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef __FIXED_HPP__
-#define __FIXED_HPP__
+#include "Fixed.hpp"
 
-#include <iostream>
+int	main(void) {
+	
+	Fixed a;
+	Fixed const b( Fixed( 5.05f ) * Fixed( 2 ) );
 
-class Fixed {
+	std::cout << a << std::endl;
+	std::cout << ++a << std::endl;
+	std::cout << a << std::endl;
+	std::cout << a++ << std::endl;
+	std::cout << a << std::endl;
 
-private:
+	std::cout << b << std::endl;
+	
+	//std::cout << Fixed::max( a, b ) << std::endl;
 
-	int					_num;
-	static const int	_f_num = 8;
-
-public:
-
-	Fixed(void);
-	Fixed(Fixed const & src);
-	~Fixed(void);
-
-	Fixed& operator=(Fixed const & src);
-	int		getRawBits(void) const;
-	void	setRawBits(int const raw);
-
-};
-
-#endif
+	return 0;
+}
