@@ -6,7 +6,7 @@
 /*   By: ldeville <ldeville@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/24 12:54:57 by ldeville          #+#    #+#             */
-/*   Updated: 2023/10/26 10:59:30 by ldeville         ###   ########.fr       */
+/*   Updated: 2023/10/26 14:35:39 by ldeville         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,6 @@ private:
 
 	Fixed const	_x;
 	Fixed const	_y;
-	const bool	DEBUG = false;
 
 public:
 
@@ -34,7 +33,8 @@ public:
 	Point& operator=(Point const & src);
 	Fixed const	getX(void) const;
 	Fixed const	getY(void) const;
-	bool bsp( Point const a, Point const b, Point const c, Point const point);
 };
+
+std::ostream&	operator<<(std::ostream&  o, Point const & src);
 
 #endif

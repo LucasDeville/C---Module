@@ -6,7 +6,7 @@
 /*   By: ldeville <ldeville@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/24 12:54:28 by ldeville          #+#    #+#             */
-/*   Updated: 2023/10/26 11:52:05 by ldeville         ###   ########.fr       */
+/*   Updated: 2023/10/26 16:39:43 by ldeville         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ Point::Point(void) : _x(0), _y(0) {
 		std::cout << "Default constructor called" << std::endl;
 }
 
-Point::Point(Fixed const x, Fixed const y) : _x(x.getRawBits()), _y(y.getRawBits()) {
+Point::Point(Fixed const x, Fixed const y) : _x(x), _y(y) {
 	if (DEBUG)
 		std::cout << "Int constructor called" << std::endl;
 }
@@ -46,6 +46,7 @@ Fixed const	Point::getY(void) const{
 	return this->_y;
 }
 
-bool Point::bsp( Point const a, Point const b, Point const c, Point const point) {
-	return false;
+std::ostream&	operator<<(std::ostream&  o, Point const & src) {
+	o << "(" << src.getX().toFloat() << "," << src.getY().toFloat() << ")";
+	return o;
 }
