@@ -6,35 +6,41 @@
 /*   By: ldeville <ldeville@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/24 12:54:28 by ldeville          #+#    #+#             */
-/*   Updated: 2023/10/26 09:24:31 by ldeville         ###   ########.fr       */
+/*   Updated: 2023/10/26 11:00:23 by ldeville         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Fixed.hpp"
 
 Fixed::Fixed(void) : _num(0) {
-	std::cout << "Default constructor called" << std::endl;
+	if (DEBUG)
+		std::cout << "Default constructor called" << std::endl;
 }
 
 Fixed::Fixed(int const num) : _num( num << _f_num ) {
-	std::cout << "Int constructor called" << std::endl;
+	if (DEBUG)
+		std::cout << "Int constructor called" << std::endl;
 }
 
 Fixed::Fixed(float const num) : _num(roundf(num * (1 << _f_num ))) {
-	std::cout << "Float constructor called" << std::endl;
+	if (DEBUG)
+		std::cout << "Float constructor called" << std::endl;
 }
 
 Fixed::Fixed(Fixed const & src) {
-	std::cout << "Copy constructor called" << std::endl;
+	if (DEBUG)
+		std::cout << "Copy constructor called" << std::endl;
 	*this = src;
 }
 
 Fixed::~Fixed(void) {
-	std::cout << "Destructor called" << std::endl;
+	if (DEBUG)
+		std::cout << "Destructor called" << std::endl;
 }
 
 Fixed&	Fixed::operator=(Fixed const & src) {
-	std::cout << "Copy assignement operator called" << std::endl;
+	if (DEBUG)
+		std::cout << "Copy assignement operator called" << std::endl;
 	if (this != &src)
 		this->_num = src.getRawBits();
 	return *this;

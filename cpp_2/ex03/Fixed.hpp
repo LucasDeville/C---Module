@@ -6,7 +6,7 @@
 /*   By: ldeville <ldeville@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/24 12:54:57 by ldeville          #+#    #+#             */
-/*   Updated: 2023/10/26 09:20:32 by ldeville         ###   ########.fr       */
+/*   Updated: 2023/10/26 11:00:38 by ldeville         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@ private:
 
 	int					_num;
 	static const int	_f_num = 8;
+	const bool			DEBUG = false;
 
 public:
 
