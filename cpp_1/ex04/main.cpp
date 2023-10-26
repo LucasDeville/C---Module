@@ -24,7 +24,7 @@ void	replacer(char **argv, std::string text) {
 		if (pos && pos == i)
 		{
 			file << argv[3];
-			i += std::string(argv[3]).size() - 1;
+			i += std::string(argv[2]).size() - 1;
 		}
 		else
 			file << text[i];
@@ -36,7 +36,6 @@ int	main(int argc, char **argv) {
 	std::ifstream	file;
 	std::string		text;
 	char			c;
-
 
 	if (argc != 4)
 	{
