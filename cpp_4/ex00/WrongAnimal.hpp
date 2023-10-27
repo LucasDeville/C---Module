@@ -1,20 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Animal.hpp                                         :+:      :+:    :+:   */
+/*   WrongAnimal.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ldeville <ldeville@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/26 16:47:08 by ldeville          #+#    #+#             */
-/*   Updated: 2023/10/27 11:56:13 by ldeville         ###   ########.fr       */
+/*   Updated: 2023/10/27 11:25:14 by ldeville         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
 
-const bool	DEBUG = true;
-
-class Animal {
+class WrongAnimal {
 
 protected:
 
@@ -22,11 +20,11 @@ protected:
 
 public:
 
-	Animal(void);
-	Animal(Animal const & src);
-	~Animal(void);
+	WrongAnimal(void);
+	WrongAnimal(WrongAnimal const & src);
+	~WrongAnimal(void);
 
-	Animal& 	operator=(Animal const & src);
+	WrongAnimal& 	operator=(WrongAnimal const & src);
 	void		makeSound(void) const;
 	std::string	getType() const;
 };

@@ -1,32 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Animal.hpp                                         :+:      :+:    :+:   */
+/*   WrongCat.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ldeville <ldeville@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/26 16:47:08 by ldeville          #+#    #+#             */
-/*   Updated: 2023/10/27 11:56:13 by ldeville         ###   ########.fr       */
+/*   Updated: 2023/10/27 11:23:12 by ldeville         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
+#include "WrongAnimal.hpp"
 
-const bool	DEBUG = true;
+class WrongCat : public WrongAnimal {
 
-class Animal {
-
-protected:
-
-	std::string	type;
+private:
 
 public:
 
-	Animal(void);
-	Animal(Animal const & src);
-	~Animal(void);
+	WrongCat(void);
+	WrongCat(WrongCat const & src);
+	~WrongCat(void);
 
-	Animal& 	operator=(Animal const & src);
-	void		makeSound(void) const;
-	std::string	getType() const;
+	WrongCat& 	operator=(WrongCat const & src);
+	void    	makeSound( void ) const;
 };
