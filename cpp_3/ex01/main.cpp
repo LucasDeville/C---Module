@@ -6,21 +6,19 @@
 /*   By: ldeville <ldeville@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/19 17:25:03 by ldeville          #+#    #+#             */
-/*   Updated: 2023/10/27 09:07:07 by ldeville         ###   ########.fr       */
+/*   Updated: 2023/10/27 09:46:37 by ldeville         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ClapTrap.hpp"
-
+#include "ScavTrap.hpp"
 
 int	main(void) {
 	
 	ClapTrap c1("Marc");
-	ClapTrap c2;
-	ClapTrap c3(c2);
+	ScavTrap c2;
+	ScavTrap c3("Tom");
 
-	c3 = c1;
-	c3.attack("Timmy");
+	c3.takeDamage(101);
 	c2.setName("Timmy");
 	c1.setDamage(8);
 	c1.attack(c2.getName());
@@ -35,6 +33,7 @@ int	main(void) {
 	c2.beRepaired(1);
 	c2.beRepaired(1);
 	c2.beRepaired(1);
+	c2.attack("Marc");
 
 	return 0;
 }

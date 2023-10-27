@@ -6,7 +6,7 @@
 /*   By: ldeville <ldeville@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/26 16:52:10 by ldeville          #+#    #+#             */
-/*   Updated: 2023/10/27 09:07:17 by ldeville         ###   ########.fr       */
+/*   Updated: 2023/10/27 09:44:35 by ldeville         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 ClapTrap::ClapTrap(void) {
 
 	if (DEBUG)
-		std::cout << "Default constructor called" << std::endl;
+		std::cout << "ClapTrap Default constructor called" << std::endl;
 	_HP = 10;
 	_EP = 10;
 	_damage = 0;
@@ -24,7 +24,7 @@ ClapTrap::ClapTrap(void) {
 ClapTrap::ClapTrap(std::string name) : _name(name) {
 	
 	if (DEBUG)
-		std::cout << "Name constructor called" << std::endl;
+		std::cout << "ClapTrap Name constructor called" << std::endl;
 	_HP = 10;
 	_EP = 10;
 	_damage = 0;
@@ -33,14 +33,14 @@ ClapTrap::ClapTrap(std::string name) : _name(name) {
 ClapTrap::ClapTrap(ClapTrap const & src) {
 	
 	if (DEBUG)
-		std::cout << "Copy constructor called" << std::endl;
+		std::cout << "ClapTrap Copy constructor called" << std::endl;
 	*this = src;
 }
 
 ClapTrap::~ClapTrap(void) {
 
 	if (DEBUG)
-		std::cout << "Destructor called" << std::endl;
+		std::cout << "ClapTrap Destructor called" << std::endl;
 }
 
 std::string	ClapTrap::getName(void) const {
@@ -63,15 +63,22 @@ void	ClapTrap::setName(std::string name) {
 	this->_name = name;
 }
 
+void	ClapTrap::setHP(int amount) {
+	this->_HP = amount;
+}
+
+void	ClapTrap::setEP(int amount) {
+	this->_EP = amount;
+}
+
 void	ClapTrap::setDamage(int amount) {
 	this->_damage = amount;
-	std::cout << "ClapTrap " << this->_name << " have now " << amount << " damage points !" << std::endl;
 }
 
 ClapTrap& ClapTrap::operator=(ClapTrap const & src) {
 	
 	if (DEBUG)
-			std::cout << "Copy assignement operator called" << std::endl;
+			std::cout << "ClapTrap Copy assignement operator called" << std::endl;
 	if (this != &src)
 	{
 		this->_name = src.getName();
@@ -104,7 +111,7 @@ void ClapTrap::takeDamage(unsigned int amount) {
 	}
 	std::cout << "ClapTrap " << this->_name << " take " << amount << " points of damage!" << std::endl;
 	this->_HP -= amount;
-	if (this->_HP == 0)
+	if (this->_HP <= 0)
 		std::cout << "ClapTrap died from this attack !" << std::endl;
 }
 
