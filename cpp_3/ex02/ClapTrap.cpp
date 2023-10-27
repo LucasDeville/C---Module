@@ -6,7 +6,7 @@
 /*   By: ldeville <ldeville@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/26 16:52:10 by ldeville          #+#    #+#             */
-/*   Updated: 2023/10/27 09:44:35 by ldeville         ###   ########.fr       */
+/*   Updated: 2023/10/27 09:55:39 by ldeville         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,11 +91,11 @@ ClapTrap& ClapTrap::operator=(ClapTrap const & src) {
 
 void ClapTrap::attack(const std::string& target) {
 
-	if (this->_HP == 0 || this->_EP == 0)
+	if (this->_HP <= 0 || this->_EP <= 0)
 	{
-		if (this->_HP == 0)
+		if (this->_HP <= 0)
 			std::cout << "ClapTrap is already dead !" << std::endl;
-		else if (this->_EP == 0)
+		else if (this->_EP <= 0)
 			std::cout << "ClapTrap got no more energy and can't attack..." << std::endl;
 		return;
 	}
@@ -104,7 +104,7 @@ void ClapTrap::attack(const std::string& target) {
 
 void ClapTrap::takeDamage(unsigned int amount) {
 	
-	if (this->_HP == 0)
+	if (this->_HP <= 0)
 	{
 		std::cout << "ClapTrap is already dead !" << std::endl;
 		return;
@@ -117,11 +117,11 @@ void ClapTrap::takeDamage(unsigned int amount) {
 
 void ClapTrap::beRepaired(unsigned int amount) {
 
-	if (this->_HP == 0 || this->_EP == 0)
+	if (this->_HP <= 0 || this->_EP <= 0)
 	{
-		if (this->_HP == 0)
+		if (this->_HP <= 0)
 			std::cout << "ClapTrap is already dead !" << std::endl;
-		else if (this->_EP == 0)
+		else if (this->_EP <= 0)
 			std::cout << "ClapTrap got no more energy and can't repair himself..." << std::endl;
 		return;
 	}

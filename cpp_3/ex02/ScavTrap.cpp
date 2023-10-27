@@ -6,7 +6,7 @@
 /*   By: ldeville <ldeville@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/26 16:52:10 by ldeville          #+#    #+#             */
-/*   Updated: 2023/10/27 09:46:56 by ldeville         ###   ########.fr       */
+/*   Updated: 2023/10/27 09:56:57 by ldeville         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,11 +60,11 @@ ScavTrap& ScavTrap::operator=(ScavTrap const & src) {
 
 void ScavTrap::attack(const std::string& target) {
 
-	if (this->getHP() == 0 || this->getEP() == 0)
+	if (this->getHP() <= 0 || this->getEP() <= 0)
 	{
-		if (this->getHP() == 0)
+		if (this->getHP() <= 0)
 			std::cout << "ScavTrap is already dead !" << std::endl;
-		else if (this->getEP() == 0)
+		else if (this->getEP() <= 0)
 			std::cout << "ScavTrap got no more energy and can't attack..." << std::endl;
 		return;
 	}
@@ -73,7 +73,7 @@ void ScavTrap::attack(const std::string& target) {
 
 void ScavTrap::takeDamage(unsigned int amount) {
 	
-	if (this->getHP() == 0)
+	if (this->getHP() <= 0)
 	{
 		std::cout << "ScavTrap is already dead !" << std::endl;
 		return;
@@ -86,11 +86,11 @@ void ScavTrap::takeDamage(unsigned int amount) {
 
 void ScavTrap::beRepaired(unsigned int amount) {
 
-	if (this->getHP() == 0 || this->getEP() == 0)
+	if (this->getHP() <= 0 || this->getEP() <= 0)
 	{
-		if (this->getHP() == 0)
+		if (this->getHP() <= 0)
 			std::cout << "ScavTrap is already dead !" << std::endl;
-		else if (this->getEP() == 0)
+		else if (this->getEP() <= 0)
 			std::cout << "ScavTrap got no more energy and can't repair himself..." << std::endl;
 		return;
 	}
