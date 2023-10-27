@@ -1,9 +1,9 @@
 MAKEFLAGS += --silent
 CC = c++
-CFLAGS = -Wall -Wextra -Werror -std=c++98 -Wshadow -Wno-shadow
-SRCS = main.cpp ClapTrap.cpp ScavTrap.cpp FragTrap.cpp DiamondTrap.cpp
+CFLAGS = -Wall -Wextra -Werror -std=c++98
+SRCS = main.cpp Animal.cpp Dog.cpp Cat.cpp
 OBJS_EXEC = ${SRCS:.cpp=.o}
-EXEC = ClapTrap
+EXEC = Polymorphism
 
 
 all: ${EXEC}
