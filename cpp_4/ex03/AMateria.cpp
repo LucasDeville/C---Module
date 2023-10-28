@@ -1,49 +1,59 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Animal.cpp                                       :+:      :+:    :+:   */
+/*   AMateria.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ldeville <ldeville@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/26 16:52:10 by ldeville          #+#    #+#             */
-/*   Updated: 2023/10/27 11:12:25 by ldeville         ###   ########.fr       */
+/*   Updated: 2023/10/28 11:06:06 by ldeville         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Animal.hpp"
+#include "AMateria.hpp"
 
-Animal::Animal(void) {
+AMateria::AMateria(void) {
 
 	if (DEBUG)
-		std::cout << "Animal Default constructor called" << std::endl;
+		std::cout << "AMateria Default constructor called" << std::endl;
 }
 
-Animal::Animal(Animal const & src) {
+AMateria::AMateria(std::string const & type) {
+	if (DEBUG)
+		std::cout << "AMateria Default assignement constructor called" << std::endl;
+	this->type = type;
+}
+
+AMateria::AMateria(AMateria const & src) {
 	
 	if (DEBUG)
-		std::cout << "Animal Copy constructor called" << std::endl;
+		std::cout << "AMateria Copy constructor called" << std::endl;
 	*this = src;
 }
 
-Animal::~Animal(void) {
+AMateria::~AMateria(void) {
 
 	if (DEBUG)
-		std::cout << "Animal Destructor called" << std::endl;
+		std::cout << "AMateria Destructor called" << std::endl;
 }
 
-Animal& Animal::operator=(Animal const & src) {
+AMateria& AMateria::operator=(AMateria const & src) {
 	
 	if (DEBUG)
-			std::cout << "Animal Copy assignement operator called" << std::endl;
+			std::cout << "AMateria Copy assignement operator called" << std::endl;
 	if (this != &src)
 		this->type = src.type;
 	return *this;
 }
 
-void		Animal::makeSound() const {
-	std::cout << "*insert animal sound*" << std::endl;
+AMateria*	AMateria::clone(void) const {
+	
 }
 
-std::string	Animal::getType() const {
+std::string	AMateria::getType() const {
 	return this->type;
+}
+
+void	AMateria::use(ICharacter& target) {
+	
 }

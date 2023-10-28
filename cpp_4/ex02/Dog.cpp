@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Cat.cpp                                       :+:      :+:    :+:   */
+/*   Dog.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ldeville <ldeville@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -10,37 +10,55 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Cat.hpp"
+#include "Dog.hpp"
 
-Cat::Cat(void) {
+Dog::Dog(void) {
 
 	if (DEBUG)
-		std::cout << "Cat Default constructor called" << std::endl;
-	this->type = "Cat";
+		std::cout << "Dog Default constructor called" << std::endl;
+	this->type = "Dog";
+	this->_brain = new Brain();
 }
 
-Cat::Cat(Cat const & src) {
+Dog::Dog(Dog const & src) {
 	
 	if (DEBUG)
-		std::cout << "Cat Copy constructor called" << std::endl;
+		std::cout << "Dog Copy constructor called" << std::endl;
 	*this = src;
 }
 
-Cat::~Cat(void) {
+Dog::~Dog(void) {
 
 	if (DEBUG)
-		std::cout << "Cat Destructor called" << std::endl;
+		std::cout << "Dog Destructor called" << std::endl;
+	delete this->_brain;
 }
 
-Cat& Cat::operator=(Cat const & src) {
+Dog& Dog::operator=(Dog const & src) {
 	
 	if (DEBUG)
-			std::cout << "Cat Copy assignement operator called" << std::endl;
+			std::cout << "Dog Copy assignement operator called" << std::endl;
 	if (this != &src)
+	{
 		this->type = src.type;
+		if (this->_brain)
+			delete this->_brain;
+		this->_brain = new Brain(*src._brain);
+	}
 	return *this;
 }
 
-void		Cat::makeSound() const {
-	std::cout << "Miaouu !" << std::endl;
+void	Dog::makeSound(void) const {
+	std::cout << "Bark !" << std::endl;
 }
+
+void	Dog::setIdeas(std::string ideas[100]) {
+
+	this->_brain->setIdeas(ideas);
+}
+
+void	Dog::printIdeas(void) {
+
+	this->_brain->printIdeas();
+}
+

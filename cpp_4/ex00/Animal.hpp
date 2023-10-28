@@ -6,7 +6,7 @@
 /*   By: ldeville <ldeville@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/26 16:47:08 by ldeville          #+#    #+#             */
-/*   Updated: 2023/10/27 11:56:13 by ldeville         ###   ########.fr       */
+/*   Updated: 2023/10/27 16:01:21 by ldeville         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,9 +24,9 @@ public:
 
 	Animal(void);
 	Animal(Animal const & src);
-	~Animal(void);
+	virtual ~Animal(void);
 
-	Animal& 	operator=(Animal const & src);
-	void		makeSound(void) const;
-	std::string	getType() const;
+	Animal& 		operator=(Animal const & src);
+	virtual void	makeSound(void) const;
+	std::string		getType() const;
 };

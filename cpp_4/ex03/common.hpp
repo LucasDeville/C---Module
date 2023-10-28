@@ -1,28 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Dog.hpp                                            :+:      :+:    :+:   */
+/*   common.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ldeville <ldeville@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/26 16:47:08 by ldeville          #+#    #+#             */
-/*   Updated: 2023/10/27 16:03:22 by ldeville         ###   ########.fr       */
+/*   Created: 2023/10/28 10:20:49 by ldeville          #+#    #+#             */
+/*   Updated: 2023/10/28 10:57:08 by ldeville         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#ifndef __COMMON_H__
+# define __COMMON_H__
+
 #include <iostream>
-#include "Animal.hpp"
+#include "AMateria.hpp"
+#include "Character.hpp"
+#include "ICharacter.hpp"
 
-class Dog : public Animal {
-
-private:
-
-public:
-
-	Dog(void);
-	Dog(Dog const & src);
-	~Dog(void);
-
-	Dog& 	operator=(Dog const & src);
-	void	makeSound(void) const;
-};
+#endif

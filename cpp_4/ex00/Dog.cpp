@@ -40,3 +40,7 @@ Dog& Dog::operator=(Dog const & src) {
 		this->type = src.type;
 	return *this;
 }
+
+void	Dog::makeSound() const {
+	std::cout << "Bark !" << std::endl;
+}

@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Cat.cpp                                       :+:      :+:    :+:   */
+/*   AAnimal.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ldeville <ldeville@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -10,37 +10,40 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Cat.hpp"
+#include "AAnimal.hpp"
 
-Cat::Cat(void) {
+AAnimal::AAnimal(void) {
 
 	if (DEBUG)
-		std::cout << "Cat Default constructor called" << std::endl;
-	this->type = "Cat";
+		std::cout << "AAnimal Default constructor called" << std::endl;
 }
 
-Cat::Cat(Cat const & src) {
+AAnimal::AAnimal(AAnimal const & src) {
 	
 	if (DEBUG)
-		std::cout << "Cat Copy constructor called" << std::endl;
+		std::cout << "AAnimal Copy constructor called" << std::endl;
 	*this = src;
 }
 
-Cat::~Cat(void) {
+AAnimal::~AAnimal(void) {
 
 	if (DEBUG)
-		std::cout << "Cat Destructor called" << std::endl;
+		std::cout << "AAnimal Destructor called" << std::endl;
 }
 
-Cat& Cat::operator=(Cat const & src) {
+AAnimal& AAnimal::operator=(AAnimal const & src) {
 	
 	if (DEBUG)
-			std::cout << "Cat Copy assignement operator called" << std::endl;
+			std::cout << "AAnimal Copy assignement operator called" << std::endl;
 	if (this != &src)
 		this->type = src.type;
 	return *this;
 }
 
-void		Cat::makeSound() const {
-	std::cout << "Miaouu !" << std::endl;
+void		AAnimal::makeSound() const {
+	std::cout << "*insert AAnimal sound*" << std::endl;
+}
+
+std::string	AAnimal::getType() const {
+	return this->type;
 }

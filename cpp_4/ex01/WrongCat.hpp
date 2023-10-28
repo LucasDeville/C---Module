@@ -1,28 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Dog.hpp                                            :+:      :+:    :+:   */
+/*   WrongCat.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ldeville <ldeville@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/26 16:47:08 by ldeville          #+#    #+#             */
-/*   Updated: 2023/10/27 16:03:22 by ldeville         ###   ########.fr       */
+/*   Updated: 2023/10/27 11:23:12 by ldeville         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
-#include "Animal.hpp"
+#include "WrongAnimal.hpp"
 
-class Dog : public Animal {
+class WrongCat : public WrongAnimal {
 
 private:
 
 public:
 
-	Dog(void);
-	Dog(Dog const & src);
-	~Dog(void);
+	WrongCat(void);
+	WrongCat(WrongCat const & src);
+	~WrongCat(void);
 
-	Dog& 	operator=(Dog const & src);
-	void	makeSound(void) const;
+	WrongCat& 	operator=(WrongCat const & src);
+	void    	makeSound( void ) const;
 };

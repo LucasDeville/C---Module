@@ -1,28 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Dog.hpp                                            :+:      :+:    :+:   */
+/*   AMateria.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ldeville <ldeville@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/26 16:47:08 by ldeville          #+#    #+#             */
-/*   Updated: 2023/10/27 16:03:22 by ldeville         ###   ########.fr       */
+/*   Updated: 2023/10/28 09:41:09 by ldeville         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
-#include "Animal.hpp"
+#include "common.hpp"
 
-class Dog : public Animal {
+const bool	DEBUG = true;
 
-private:
+class AMateria {
+
+protected:
+
+	std::string	type;
 
 public:
 
-	Dog(void);
-	Dog(Dog const & src);
-	~Dog(void);
+	AMateria(void);
+	AMateria(std::string const & type);
+	AMateria(AMateria const & src);
+	virtual ~AMateria(void);
 
-	Dog& 	operator=(Dog const & src);
-	void	makeSound(void) const;
+	AMateria& 		operator=(AMateria const & src);
+	virtual AMateria*	clone(void) const = 0;
+	void	AMateria::use(ICharacter& target);
+	std::string		getType() const;
 };

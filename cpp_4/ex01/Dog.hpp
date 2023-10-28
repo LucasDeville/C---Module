@@ -6,16 +6,19 @@
 /*   By: ldeville <ldeville@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/26 16:47:08 by ldeville          #+#    #+#             */
-/*   Updated: 2023/10/27 16:03:22 by ldeville         ###   ########.fr       */
+/*   Updated: 2023/10/28 09:09:50 by ldeville         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
 #include "Animal.hpp"
+#include "Brain.hpp"
 
 class Dog : public Animal {
 
 private:
+
+	Brain* _brain;
 
 public:
 
@@ -25,4 +28,7 @@ public:
 
 	Dog& 	operator=(Dog const & src);
 	void	makeSound(void) const;
+	void	setIdeas(std::string ideas[100]);
+	void	printIdeas(void);
+
 };

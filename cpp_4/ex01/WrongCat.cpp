@@ -1,46 +1,48 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Cat.cpp                                       :+:      :+:    :+:   */
+/*   WrongCat.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ldeville <ldeville@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/26 16:52:10 by ldeville          #+#    #+#             */
-/*   Updated: 2023/10/27 11:12:25 by ldeville         ###   ########.fr       */
+/*   Updated: 2023/10/27 11:55:13 by ldeville         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Cat.hpp"
+#include "WrongCat.hpp"
+#include "Animal.hpp"
 
-Cat::Cat(void) {
+WrongCat::WrongCat(void) {
 
 	if (DEBUG)
-		std::cout << "Cat Default constructor called" << std::endl;
+		std::cout << "WrongCat Default constructor called" << std::endl;
 	this->type = "Cat";
 }
 
-Cat::Cat(Cat const & src) {
+WrongCat::WrongCat(WrongCat const & src) {
 	
 	if (DEBUG)
-		std::cout << "Cat Copy constructor called" << std::endl;
+		std::cout << "WrongCat Copy constructor called" << std::endl;
 	*this = src;
 }
 
-Cat::~Cat(void) {
+WrongCat::~WrongCat(void) {
 
 	if (DEBUG)
-		std::cout << "Cat Destructor called" << std::endl;
+		std::cout << "WrongCat Destructor called" << std::endl;
 }
 
-Cat& Cat::operator=(Cat const & src) {
+WrongCat& WrongCat::operator=(WrongCat const & src) {
 	
 	if (DEBUG)
-			std::cout << "Cat Copy assignement operator called" << std::endl;
+			std::cout << "WrongCat Copy assignement operator called" << std::endl;
 	if (this != &src)
 		this->type = src.type;
 	return *this;
 }
 
-void		Cat::makeSound() const {
-	std::cout << "Miaouu !" << std::endl;
+void    WrongCat::makeSound( void ) const
+{
+    std::cout << "Miaou !" << std::endl;
 }

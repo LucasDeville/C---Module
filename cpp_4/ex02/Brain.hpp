@@ -1,28 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Dog.hpp                                            :+:      :+:    :+:   */
+/*   Brain.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ldeville <ldeville@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/26 16:47:08 by ldeville          #+#    #+#             */
-/*   Updated: 2023/10/27 16:03:22 by ldeville         ###   ########.fr       */
+/*   Updated: 2023/10/28 09:17:29 by ldeville         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
-#include "Animal.hpp"
 
-class Dog : public Animal {
+class Brain {
 
 private:
 
+	std::string	_ideas[100];
+
 public:
 
-	Dog(void);
-	Dog(Dog const & src);
-	~Dog(void);
+	Brain(void);
+	Brain(Brain const & src);
+	~Brain(void);
 
-	Dog& 	operator=(Dog const & src);
-	void	makeSound(void) const;
+	Brain& 		operator=(Brain const & src);
+	void		setIdeas(std::string ideas[100]);
+	void 		printIdeas(void) const;
+
 };
