@@ -15,7 +15,7 @@
 Cure::Cure(void) {
 	if (DEBUG)
 		std::cout << "Cure Default constructor called" << std::endl;
-	this->type = "Cure";
+	this->type = "cure";
 }
 Cure::Cure(Cure const & src) {
 	if (DEBUG)

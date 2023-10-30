@@ -16,11 +16,15 @@ Character::Character(void) {
 
 	if (DEBUG)
 		std::cout << "Character Default constructor called" << std::endl;
+	for (int i = 0; i < 4; i++)
+		this->_inv[i] = 0;
 }
 
 Character::Character(std::string const & name) {
 	if (DEBUG)
 		std::cout << "Character Default assignement constructor called" << std::endl;
+	for (int i = 0; i < 4; i++)
+		this->_inv[i] = 0;
 	this->_name = name;
 }
 
@@ -47,7 +51,7 @@ Character& Character::operator=(Character const & src) {
 	if (this != &src)
 	{
 		for (int i = 0; i < 4; i++)
-			this->_inv[i] = src._inv[i];
+			this->_inv[i] = src._inv[i]->clone();
 		this->_name = src._name;
 	}
 	return *this;

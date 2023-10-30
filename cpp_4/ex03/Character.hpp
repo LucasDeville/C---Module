@@ -10,11 +10,14 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#ifndef __CHARACTER_HPP__
+#define __CHARACTER_HPP__
+
 #include "common.hpp"
+#include "ICharacter.hpp"
+#include "AMateria.hpp"
 
-const bool	DEBUG = true;
-
-class Character {
+class Character : public ICharacter {
 
 private:
 
@@ -28,8 +31,12 @@ public:
 	Character(Character const & src);
 	virtual ~Character(void);
 
-	virtual std::string const & getName() const = 0;
-	virtual void equip(AMateria* m) = 0;
-	virtual void unequip(int idx) = 0;
-	virtual void use(int idx, ICharacter& target) = 0;
+
+	Character& operator=(Character const & src);
+	virtual std::string const & getName() const;
+	virtual void equip(AMateria* m);
+	virtual void unequip(int idx);
+	virtual void use(int idx, ICharacter& target);
 };
+
+#endif

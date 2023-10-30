@@ -10,9 +10,13 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#ifndef __AMATERIA_HPP__
+#define __AMATERIA_HPP__
+
+#include "ICharacter.hpp"
 #include "common.hpp"
 
-const bool	DEBUG = true;
+class ICharacter;
 
 class AMateria {
 
@@ -27,8 +31,10 @@ public:
 	AMateria(AMateria const & src);
 	virtual ~AMateria(void);
 
-	AMateria& 		operator=(AMateria const & src);
+	AMateria& 			operator=(AMateria const & src);
 	virtual AMateria*	clone(void) const = 0;
-	void	AMateria::use(ICharacter& target);
-	std::string		getType() const;
+	virtual void				use(ICharacter& target);
+	std::string			getType() const;
 };
+
+#endif

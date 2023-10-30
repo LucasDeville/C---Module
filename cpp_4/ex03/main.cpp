@@ -6,11 +6,16 @@
 /*   By: ldeville <ldeville@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/19 17:25:03 by ldeville          #+#    #+#             */
-/*   Updated: 2023/10/28 10:55:23 by ldeville         ###   ########.fr       */
+/*   Updated: 2023/10/30 11:30:21 by ldeville         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "common.hpp"
+#include "Character.hpp"
+#include "ICharacter.hpp"
+#include "IMateriaSource.hpp"
+#include "MateriaSource.hpp"
+#include "Ice.hpp"
+#include "Cure.hpp"
 
 int	main(void) {
 
@@ -31,9 +36,16 @@ int	main(void) {
 	me->use(0, *bob);
 	me->use(1, *bob);
 
+	/*ICharacter* test = me;
+	ICharacter* test2 = me;
+	test->use(0, *test2);
+	test->use(1, *test2);
+	test->use(2, *test2);*/
+
 	delete bob;
 	delete me;
 	delete src;
+
 
 	return 0;
 }

@@ -6,7 +6,7 @@
 /*   By: ldeville <ldeville@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/26 16:52:10 by ldeville          #+#    #+#             */
-/*   Updated: 2023/10/28 11:06:06 by ldeville         ###   ########.fr       */
+/*   Updated: 2023/10/30 11:10:29 by ldeville         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ AMateria& AMateria::operator=(AMateria const & src) {
 }
 
 AMateria*	AMateria::clone(void) const {
-	
+	return 0;
 }
 
 std::string	AMateria::getType() const {
@@ -55,5 +55,5 @@ std::string	AMateria::getType() const {
 }
 
 void	AMateria::use(ICharacter& target) {
-	
+	std::cout << "Not a good use !" << std::endl;
 }
