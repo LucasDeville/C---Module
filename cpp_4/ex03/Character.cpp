@@ -16,8 +16,6 @@ Character::Character(void) {
 
 	if (DEBUG)
 		std::cout << "Character Default constructor called" << std::endl;
-	for (int i = 0; i < 4; i++)
-		this->_inv[i] = 0;
 }
 
 Character::Character(std::string const & name) {
@@ -32,6 +30,8 @@ Character::Character(Character const & src) {
 	
 	if (DEBUG)
 		std::cout << "Character Copy constructor called" << std::endl;
+	for (int i = 0; i < 4; i++)
+		this->_inv[i] = 0;
 	*this = src;
 }
 
@@ -51,7 +51,12 @@ Character& Character::operator=(Character const & src) {
 	if (this != &src)
 	{
 		for (int i = 0; i < 4; i++)
-			this->_inv[i] = src._inv[i]->clone();
+		{
+			if (this->_inv[i])
+				delete _inv[i];
+			if (src._inv[i])
+				this->_inv[i] = src._inv[i]->clone();
+		}
 		this->_name = src._name;
 	}
 	return *this;

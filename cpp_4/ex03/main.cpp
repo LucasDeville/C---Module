@@ -6,7 +6,7 @@
 /*   By: ldeville <ldeville@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/19 17:25:03 by ldeville          #+#    #+#             */
-/*   Updated: 2023/10/30 11:30:21 by ldeville         ###   ########.fr       */
+/*   Updated: 2023/10/30 15:16:13 by ldeville         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@
 
 int	main(void) {
 
+	std::cout << "		~Subject tests~		" << std::endl;
 	MateriaSource* src = new MateriaSource();
 	src->learnMateria(new Ice());
 	src->learnMateria(new Cure());
@@ -36,16 +37,29 @@ int	main(void) {
 	me->use(0, *bob);
 	me->use(1, *bob);
 
-	/*ICharacter* test = me;
-	ICharacter* test2 = me;
-	test->use(0, *test2);
-	test->use(1, *test2);
-	test->use(2, *test2);*/
+	/*std::cout << std::endl << "		~Tests~		" << std::endl;
+	Character* pretest = new Character("me");
+	Character* pretest2 = new Character("Billy");
 
+	tmp = src->createMateria("ice");
+	pretest->equip(tmp);
+	tmp = src->createMateria("cure");
+	pretest->equip(tmp);
+	ICharacter* test = new Character(*pretest);*/
+	
 	delete bob;
 	delete me;
 	delete src;
-
+	
+	/*pretest->use(0, *pretest2);
+	pretest->use(1, *pretest2);
+	pretest->unequip(1);
+	pretest->use(1, *pretest2);
+	std::cout << std::endl;
+	test->use(0, *pretest);
+	delete pretest;
+	delete pretest2;
+	delete test;*/
 
 	return 0;
 }
