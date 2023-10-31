@@ -6,7 +6,7 @@
 /*   By: ldeville <ldeville@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/30 15:33:19 by ldeville          #+#    #+#             */
-/*   Updated: 2023/10/31 11:09:09 by ldeville         ###   ########.fr       */
+/*   Updated: 2023/10/31 16:59:03 by ldeville         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ public:
 	BureauCrat(BureauCrat const & src);
 	~BureauCrat(void);
 
-	BureauCrat 			operator=(BureauCrat const & src);
+	BureauCrat&			operator=(BureauCrat const & src);
 	const std::string	getName(void) const;
 	int 				getGrade(void) const;
 	void				setGrade(int grade);

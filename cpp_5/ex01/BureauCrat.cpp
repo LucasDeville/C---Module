@@ -6,7 +6,7 @@
 /*   By: ldeville <ldeville@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/31 08:35:37 by ldeville          #+#    #+#             */
-/*   Updated: 2023/10/31 11:19:18 by ldeville         ###   ########.fr       */
+/*   Updated: 2023/10/31 16:59:11 by ldeville         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ BureauCrat::BureauCrat(BureauCrat const & src) : _name(src.getName()) {
 	*this = src;
 }
 
-BureauCrat BureauCrat::operator=(BureauCrat const & src) {
+BureauCrat& BureauCrat::operator=(BureauCrat const & src) {
 
 	if (this != &src)
 		this->_grade = src.getGrade();

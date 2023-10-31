@@ -6,7 +6,7 @@
 /*   By: ldeville <ldeville@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/31 08:35:37 by ldeville          #+#    #+#             */
-/*   Updated: 2023/10/31 16:59:33 by ldeville         ###   ########.fr       */
+/*   Updated: 2023/10/31 17:01:20 by ldeville         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,6 +69,23 @@ void	BureauCrat::downGrade(void) {
 	if (this->_grade >= 150)
 		throw GradeTooLowException();
 	this->_grade += 1;
+}
+
+void	BureauCrat::signForm(AForm & src) {
+
+	try {
+		src.beSigned(*this);
+		std::cout << this->_name << " signed " << src.getName() << std::endl;
+	}
+	catch (AForm::GradeTooLowException &e)
+	{
+		std::cout << this->_name << " couldn't sign " << src.getName() << "because " << e.what() << std::endl;
+	}
+}
+
+void	BureauCrat::executeForm(AForm const & form) {
+
+	form.execute(*this);
 }
 
 std::ostream& operator<<(std::ostream & o, BureauCrat const & src) {
