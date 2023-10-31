@@ -1,18 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   common.hpp                                         :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ldeville <ldeville@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/28 10:20:49 by ldeville          #+#    #+#             */
-/*   Updated: 2023/10/31 10:30:33 by ldeville         ###   ########.fr       */
+/*   Created: 2023/10/19 17:25:03 by ldeville          #+#    #+#             */
+/*   Updated: 2023/10/31 11:20:54 by ldeville         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef __COMMON_H__
-# define __COMMON_H__
+#include "common.hpp"
+#include "BureauCrat.hpp"
+#include "Form.hpp"
 
-#include <iostream>
+int	main(void) {
 
-#endif
+	std::cout << "	~TEST~	" << std::endl;
+	BureauCrat	test("Billy");
+	Form		form("Form 1", 100, 150);
+
+	std::cout << test << std::endl;
+	std::cout << form << std::endl;
+	test.signForm(form);
+	std::cout << form << std::endl;
+	test.setGrade(100);
+	test.signForm(form);
+	std::cout << form << std::endl;
+
+	return 0;
+}
