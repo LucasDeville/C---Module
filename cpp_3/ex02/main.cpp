@@ -6,7 +6,7 @@
 /*   By: ldeville <ldeville@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/19 17:25:03 by ldeville          #+#    #+#             */
-/*   Updated: 2023/10/27 10:17:32 by ldeville         ###   ########.fr       */
+/*   Updated: 2023/10/31 10:08:01 by ldeville         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,12 +25,6 @@ int	main(void) {
 	c2.setName("Timmy");
 	c1.setDamage(8);
 	c1.attack(c2.getName());
-	c2.beRepaired(1);
-	c2.beRepaired(1);
-	c2.beRepaired(1);
-	c2.beRepaired(1);
-	c2.beRepaired(1);
-	c2.beRepaired(1);
 	c2.beRepaired(1);
 	c2.beRepaired(1);
 	c2.beRepaired(1);

@@ -6,7 +6,7 @@
 /*   By: ldeville <ldeville@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/26 16:52:10 by ldeville          #+#    #+#             */
-/*   Updated: 2023/10/27 09:46:56 by ldeville         ###   ########.fr       */
+/*   Updated: 2023/10/31 10:03:09 by ldeville         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,34 +69,6 @@ void ScavTrap::attack(const std::string& target) {
 		return;
 	}
 	std::cout << "ScavTrap " << this->getName() << " attacks " << target << ", causing " << this->getDamage() << " points of damage!" << std::endl;
-}
-
-void ScavTrap::takeDamage(unsigned int amount) {
-	
-	if (this->getHP() == 0)
-	{
-		std::cout << "ScavTrap is already dead !" << std::endl;
-		return;
-	}
-	std::cout << "ScavTrap " << this->getName() << " take " << amount << " points of damage!" << std::endl;
-	this->setHP(this->getHP() - amount);
-	if (this->getHP() <= 0)
-		std::cout << "ScavTrap died from this attack !" << std::endl;
-}
-
-void ScavTrap::beRepaired(unsigned int amount) {
-
-	if (this->getHP() == 0 || this->getEP() == 0)
-	{
-		if (this->getHP() == 0)
-			std::cout << "ScavTrap is already dead !" << std::endl;
-		else if (this->getEP() == 0)
-			std::cout << "ScavTrap got no more energy and can't repair himself..." << std::endl;
-		return;
-	}
-	this->setEP(this->getEP() - 1);
-	std::cout << "ScavTrap " << this->getName() << " repaired himsfelf and gain " << amount << " HP! (Energy:" << this->getEP() << "/50)" << std::endl;
-	this->setHP(this->getHP() + amount);
 }
 
 void	ScavTrap::guardGate(void) {
