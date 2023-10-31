@@ -1,9 +1,9 @@
 MAKEFLAGS += --silent
 CC = c++
 CFLAGS = -Wall -Wextra -Werror -std=c++98 -Wshadow -Wno-shadow
-SRCS = main.cpp
+SRCS = main.cpp BureauCrat.cpp
 OBJS_EXEC = ${SRCS:.cpp=.o}
-EXEC = Polymorphism
+EXEC = BureauCrat
 
 
 all: ${EXEC}
