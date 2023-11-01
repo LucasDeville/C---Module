@@ -6,7 +6,7 @@
 /*   By: ldeville <ldeville@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/31 08:35:37 by ldeville          #+#    #+#             */
-/*   Updated: 2023/10/31 17:01:20 by ldeville         ###   ########.fr       */
+/*   Updated: 2023/11/01 09:26:58 by ldeville         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,7 +79,7 @@ void	BureauCrat::signForm(AForm & src) {
 	}
 	catch (AForm::GradeTooLowException &e)
 	{
-		std::cout << this->_name << " couldn't sign " << src.getName() << "because " << e.what() << std::endl;
+		std::cout << "Error : " << this->_name << " couldn't sign " << src.getName() << " because " << e.what() << std::endl;
 	}
 }
 

@@ -11,6 +11,7 @@
 /* ************************************************************************** */
 
 #include "ShrubberyCreationForm.hpp"
+#include <fstream>
 
 ShrubberyCreationForm::ShrubberyCreationForm(void) : AForm("ShrubberyCreationForm", 150, 0){
 
@@ -25,10 +26,12 @@ ShrubberyCreationForm::ShrubberyCreationForm(const std::string target)
 
 ShrubberyCreationForm::ShrubberyCreationForm(ShrubberyCreationForm const & src) : AForm(src) {
 
+	if (this != &src)
+		this->_target = src._target;
 	*this = src;
 }
 
-ShrubberyCreationForm ShrubberyCreationForm::operator=(ShrubberyCreationForm const & src) {
+ShrubberyCreationForm& ShrubberyCreationForm::operator=(ShrubberyCreationForm const & src) {
 
 	if (this != &src)
 		this->_target = src._target;
@@ -47,6 +50,37 @@ void	ShrubberyCreationForm::execute(BureauCrat const & executor) const {
 		throw GradeTooLowException();
 	else
 	{
-		std::cout << "In ShrubberyCreationForm" << std::endl;
+		std::cout << executor.getName() << " executed " << this->_target << std::endl;
+		std::ofstream	file;
+		file.open(this->_target + "_shrubbery");
+        file << "                                                 ." << std::endl;
+        file << "                                      .         ; " << std::endl; 
+        file << "         .              .              ;%     ;;   " << std::endl;
+        file << "           ,           ,                :;%  %;   " << std::endl;
+        file << "            :         ;                   :;%;'     .,   " << std::endl;
+        file << "   ,.        %;     %;            ;        %;'    ,;" << std::endl;
+        file << "     ;       ;%;  %%;        ,     %;    ;%;    ,%'" << std::endl;
+        file << "      %;       %;%;      ,  ;       %;  ;%;   ,%;' " << std::endl;
+        file << "       ;%;      %;        ;%;        % ;%;  ,%;'" << std::endl;
+        file << "        `%;.     ;%;     %;'         `;%%;.%;'" << std::endl;
+        file << "         `:;%.    ;%%. %@;        %; ;@%;%'" << std::endl;
+        file << "            `:%;.  :;bd%;          %;@%;'" << std::endl;
+        file << "              `@%:.  :;%.         ;@@%;'   " << std::endl;
+        file << "                `@%.  `;@%.      ;@@%;         " << std::endl;
+        file << "                  `@%%. `@%%    ;@@%;        " << std::endl;
+        file << "                    ;@%. :@%%  %@@%;       " << std::endl;
+        file << "                      %@bd%%%bd%%:;     " << std::endl;
+        file << "                        #@%%%%%:;;" << std::endl;
+        file << "                        %@@%%%::;" << std::endl;
+        file << "                        %@@@%(o);  . '         " << std::endl;
+        file << "                        %@@@o%;:(.,'         " << std::endl;
+        file << "                    `.. %@@@o%::;         " << std::endl;
+        file << "                       `)@@@o%::;         " << std::endl;
+        file << "                        %@@(o)::;        " << std::endl;
+        file << "                       .%@@@@%::;         " << std::endl;
+        file << "                       ;%@@@@%::;.          " << std::endl;
+        file << "                      ;%@@@@%%:;;;. " << std::endl;
+        file << "                  ...;%@@@@@%%:;;;;,..    " << std::endl;
+		file.close();
 	}
 }

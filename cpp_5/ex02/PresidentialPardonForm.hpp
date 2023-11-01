@@ -10,13 +10,13 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef __SHRUBBERYCREATIONFORM_HPP__
-#define __SHRUBBERYCREATIONFORM_HPP__
+#ifndef __PRESIDENTIALPARDONFORM_HPP__
+#define __PRESIDENTIALPARDONFORM_HPP__
 
 #include "common.hpp"
 #include "AForm.hpp"
 
-class ShrubberyCreationForm : public AForm {
+class PresidentialPardonForm : public AForm {
 
 private:
 
@@ -24,12 +24,12 @@ private:
 
 public:
 
-	ShrubberyCreationForm(void);
-	ShrubberyCreationForm(const std::string target);
-	ShrubberyCreationForm(ShrubberyCreationForm const & src);
-	~ShrubberyCreationForm(void);
+	PresidentialPardonForm(void);
+	PresidentialPardonForm(const std::string target);
+	PresidentialPardonForm(PresidentialPardonForm const & src);
+	~PresidentialPardonForm(void);
 
-	ShrubberyCreationForm& 			operator=(ShrubberyCreationForm const & src);
+	PresidentialPardonForm& 			operator=(PresidentialPardonForm const & src);
 	void							execute(BureauCrat const & executor) const;	
 };
 

@@ -6,7 +6,7 @@
 /*   By: ldeville <ldeville@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/30 15:33:19 by ldeville          #+#    #+#             */
-/*   Updated: 2023/10/31 17:01:13 by ldeville         ###   ########.fr       */
+/*   Updated: 2023/11/01 08:41:20 by ldeville         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,21 +45,14 @@ public:
 	class GradeTooHighException : public std::exception {
 		public:
 		virtual const char* what() const throw() {
-			return ("This bureaucrat can't grade below 1 cause it's already the highest !");
+			return ("Error : This bureaucrat can't grade below 1 cause it's already the highest !");
 		}
 	};
 	 
 	class GradeTooLowException : public std::exception {
 		public:
 		virtual const char* what() const throw() {
-			return ("This bureaucrat can't grade above 150 cause it's already the lowest !");
-		}
-	};
-
-	class GradeTooLowException : public std::exception {
-		public:
-		virtual const char* what() const throw() {
-			return ("This bureaucrat can't grade above 150 cause it's already the lowest !");
+			return ("Error : This bureaucrat can't grade above 150 cause it's already the lowest !");
 		}
 	};
 };
