@@ -6,7 +6,7 @@
 /*   By: ldeville <ldeville@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/01 10:25:47 by ldeville          #+#    #+#             */
-/*   Updated: 2023/11/01 10:26:12 by ldeville         ###   ########.fr       */
+/*   Updated: 2023/11/01 19:08:25 by ldeville         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,6 @@
 #define __COMMON_HPP__
 
 #include <iostream>
+#include <string>
 
 #endif
