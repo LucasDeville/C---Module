@@ -2,15 +2,14 @@ MAKEFLAGS += --silent
 CC = c++
 CFLAGS = -Wall -Wextra -Werror -std=c++98 -Wshadow -Wno-shadow
 
-FILES = main.cpp
-FILES_H = common.h
+FILES = main.cpp ScalarConverter.cpp
 
 SRCS_DIR = srcs/
 INCL = -I ./includes
 
 SRCS = $(addprefix $(SRCS_DIR), $(FILES))
 OBJS_EXEC = ${SRCS:.cpp=.o}
-EXEC = BureauCrat
+EXEC = convert
 
 
 all: ${EXEC}
@@ -21,7 +20,7 @@ ${EXEC}: ${OBJS_EXEC}
 		&& echo "\033[1;32m~| Compilation du $@ : OK |~\033[0m"\
 		|| echo "\033[1;31m~| Compilation du $@ : Erreur |~\033[0m"
 
-$(OBJS_EXEC):$(SRCS)
+$(SRCS_DIR)%.o: $(SRCS_DIR)%.cpp
 	$(CC) $(CFLAGS) $(INCL) -o $@ -c $<
 
 clean:
