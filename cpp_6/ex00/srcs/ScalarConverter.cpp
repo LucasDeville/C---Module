@@ -6,7 +6,7 @@
 /*   By: ldeville <ldeville@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/01 16:37:47 by ldeville          #+#    #+#             */
-/*   Updated: 2023/11/02 14:25:50 by ldeville         ###   ########.fr       */
+/*   Updated: 2023/11/02 14:29:21 by ldeville         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,12 +44,7 @@ void	ScalarConverter::convert(char *str) {
 	int		conv_int = 0;
 	float	conv_float = 0;
 	double	conv_double = 0;
-	
 	const std::string	pseudo_litteral[6] = {"-inff", "-inf", "nanf", "nan", "+inff", "+inf"};
-
-	for (int i = 0; i < 6; i++)
-		if (txt == pseudo_litteral[i])
-			contain_pseudo = i;
 	
 	if (isChar(txt))
 	{
@@ -91,18 +86,22 @@ void	ScalarConverter::convert(char *str) {
 		std::cout << "float: " << static_cast<float>(conv_double) << (conv_double - static_cast<int>(conv_double) == 0 ? ".0f" : "f") << std::endl;
 		std::cout << "double: " << conv_double << (conv_double - static_cast<int>(conv_double) == 0 ? ".0" : "") << std::endl;
 	}
-	else if (contain_pseudo >= 0)
-	{
-		std::cout << "char: impossible" << std::endl;
-		std::cout << "int: impossible" << std::endl;
-		if (contain_pseudo % 2 != 0)
-			--contain_pseudo;
-		std::cout << "float: " << pseudo_litteral[contain_pseudo] << std::endl;
-		std::cout << "double: " << pseudo_litteral[contain_pseudo + 1] << std::endl;
-	}
 	else
 	{
-		std::cout << "This conversion is impossible ! Please enter a Char, Int, Float or a Double." << std::endl;
+		for (int i = 0; i < 6; i++)
+			if (txt == pseudo_litteral[i])
+				contain_pseudo = i;
+		if (contain_pseudo >= 0)
+		{
+			std::cout << "char: impossible" << std::endl;
+			std::cout << "int: impossible" << std::endl;
+			if (contain_pseudo % 2 != 0)
+				--contain_pseudo;
+			std::cout << "float: " << pseudo_litteral[contain_pseudo] << std::endl;
+			std::cout << "double: " << pseudo_litteral[contain_pseudo + 1] << std::endl;
+		}
+		else
+			std::cout << "This conversion is impossible ! Please enter a Char, Int, Float or a Double." << std::endl;
 	}
 }
 
