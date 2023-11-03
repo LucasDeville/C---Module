@@ -2,14 +2,14 @@ MAKEFLAGS += --silent
 CC = c++
 CFLAGS = -Wall -Wextra -Werror -std=c++98 -Wshadow -Wno-shadow
 
-FILES = main.cpp
+FILES = main.cpp Span.cpp
 
 SRCS_DIR = srcs/
 INCL = -I ./includes
 
 SRCS = $(addprefix $(SRCS_DIR), $(FILES))
 OBJS_EXEC = ${SRCS:.cpp=.o}
-EXEC = EasyFind
+EXEC = Span
 
 
 all: ${EXEC}

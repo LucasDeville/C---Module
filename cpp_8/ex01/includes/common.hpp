@@ -6,7 +6,7 @@
 /*   By: ldeville <ldeville@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/01 10:25:47 by ldeville          #+#    #+#             */
-/*   Updated: 2023/11/03 14:18:36 by ldeville         ###   ########.fr       */
+/*   Updated: 2023/11/03 14:26:23 by ldeville         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,6 @@
 #include <algorithm>
 #include <list>
 
-#include "easyfind.hpp"
+#include "Span.hpp"
 
 #endif

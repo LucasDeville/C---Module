@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: ldeville <ldeville@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/01 10:25:05 by ldeville          #+#    #+#             */
-/*   Updated: 2023/11/03 14:19:31 by ldeville         ###   ########.fr       */
+/*   Created: 2023/11/03 14:26:58 by ldeville          #+#    #+#             */
+/*   Updated: 2023/11/03 16:10:55 by ldeville         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,26 +14,34 @@
 
 int	main(void) {
 
-    std::vector<int> test;
-    std::list<int> test2;
+    MutantStack<int> mstack;
 
-    test.push_back(5);
-    test.push_back(8);
-    test.push_back(94);
-    test.push_back(7);
+    mstack.push(5);
+    mstack.push(17);
 
-    test2.push_back(900);
-    test2.push_back(8);
-    test2.push_back(94);
-    test2.push_back(7);
+    std::cout << mstack.top() << std::endl;
 
-    std::cout << "  ~TEST 1~    " << std::endl;
-    easyfind(test, 5);
-    easyfind(test, 900);
+    mstack.pop();
 
-    std::cout << "  ~TEST 2~    " << std::endl;
-    easyfind(test2, 5);
-    easyfind(test2, 900);
+    std::cout << mstack.size() << std::endl;
+
+    mstack.push(3);
+    mstack.push(5);
+    mstack.push(737);
+    //[...]
+    mstack.push(0);
+
+    MutantStack<int>::iterator it = mstack.begin();
+    MutantStack<int>::iterator ite = mstack.end();
+
+    ++it;
+    --it;
+    while (it != ite)
+    {
+        std::cout << *it << std::endl;
+        ++it;
+    }
+    std::stack<int> s(mstack);
 
     return (0);
 }

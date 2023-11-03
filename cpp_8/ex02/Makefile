@@ -9,7 +9,7 @@ INCL = -I ./includes
 
 SRCS = $(addprefix $(SRCS_DIR), $(FILES))
 OBJS_EXEC = ${SRCS:.cpp=.o}
-EXEC = EasyFind
+EXEC = Mutant
 
 
 all: ${EXEC}
