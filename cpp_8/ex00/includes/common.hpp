@@ -1,22 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   C.hpp                                              :+:      :+:    :+:   */
+/*   common.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ldeville <ldeville@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/02 17:37:20 by ldeville          #+#    #+#             */
-/*   Updated: 2023/11/02 17:39:11 by ldeville         ###   ########.fr       */
+/*   Created: 2023/11/01 10:25:47 by ldeville          #+#    #+#             */
+/*   Updated: 2023/11/03 10:14:40 by ldeville         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef __C_HPP__
-#define __C_HPP__
+#ifndef __COMMON_HPP__
+#define __COMMON_HPP__
 
-#include "Base.hpp"
+#include <iostream>
+#include <stdlib.h>
 
-class C : public Base {
-	
-};
+#include "Array.hpp"
 
 #endif

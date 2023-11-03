@@ -1,26 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Base.hpp                                           :+:      :+:    :+:   */
+/*   whatever.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ldeville <ldeville@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/02 14:42:13 by ldeville          #+#    #+#             */
-/*   Updated: 2023/11/02 18:08:07 by ldeville         ###   ########.fr       */
+/*   Created: 2023/11/03 09:02:58 by ldeville          #+#    #+#             */
+/*   Updated: 2023/11/03 09:15:42 by ldeville         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef __BASE_HPP__
-#define __BASE_HPP__
+#ifndef __WHATEVER_HPP__
+#define __WHATEVER_HPP__
 
-#include "common.hpp"
+template< typename T>
+void	swap(T& a, T& b) {
+	T	tmp;
 
-class Base {
+	tmp = a;
+	a = b;
+	b = tmp;
+}
 
-public:
+template< typename T>
+T&	min(T& a, T& b) {
+	return a >= b ? b : a;
+}
 
-	virtual ~Base(void) {};
-
-};
+template< typename T>
+T&	max(T& a, T& b){
+	return a >= b ? a : b;
+}
 
 #endif

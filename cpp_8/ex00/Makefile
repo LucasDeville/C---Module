@@ -9,7 +9,7 @@ INCL = -I ./includes
 
 SRCS = $(addprefix $(SRCS_DIR), $(FILES))
 OBJS_EXEC = ${SRCS:.cpp=.o}
-EXEC = Ex00
+EXEC = Array
 
 
 all: ${EXEC}
