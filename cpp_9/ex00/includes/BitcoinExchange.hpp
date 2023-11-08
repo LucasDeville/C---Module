@@ -6,7 +6,7 @@
 /*   By: ldeville <ldeville@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/06 17:48:17 by ldeville          #+#    #+#             */
-/*   Updated: 2023/11/06 18:04:34 by ldeville         ###   ########.fr       */
+/*   Updated: 2023/11/08 15:19:41 by ldeville         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,16 +18,23 @@
 class BitcoinExchange {
 
 private:
-	std::string	_file_name;
-	BitcoinExchange(void);
+	char*							_file_name;
+	std::map<std::string, double>	_data;
+
 
 public:
 
-	BitcoinExchange(std::string file);
+	BitcoinExchange(void);
+	BitcoinExchange(char *file);
 	BitcoinExchange(BitcoinExchange const & src);
 	~BitcoinExchange(void);
 
 	BitcoinExchange&	operator=(BitcoinExchange const & src);
+	void				init_data(void);
+	void				execute_exchange(void);
+	double				getValue(std::string date);
+	std::string			prevDate(std::string date);
+	bool				badInputData(std::string str);
 };
 
 #endif

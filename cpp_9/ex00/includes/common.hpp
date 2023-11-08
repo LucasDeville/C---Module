@@ -6,7 +6,7 @@
 /*   By: ldeville <ldeville@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/01 10:25:47 by ldeville          #+#    #+#             */
-/*   Updated: 2023/11/06 17:47:48 by ldeville         ###   ########.fr       */
+/*   Updated: 2023/11/08 16:08:22 by ldeville         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,9 @@
 
 #include <iostream>
 #include <algorithm>
-
-
+#include <map>
+#include <fstream>
+#include <string>
+#include <sstream>
 
 #endif
