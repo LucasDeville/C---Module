@@ -1,38 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   RPN.hpp                                            :+:      :+:    :+:   */
+/*   PmergeMe.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ldeville <ldeville@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/08 16:54:27 by ldeville          #+#    #+#             */
-/*   Updated: 2023/11/09 14:13:52 by ldeville         ###   ########.fr       */
+/*   Created: 2023/11/09 14:18:06 by ldeville          #+#    #+#             */
+/*   Updated: 2023/11/09 14:20:47 by ldeville         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef	__RPN_HPP__
-#define	__RPN_HPP__
+#include "PmergeMe.hpp"
 
-#include "common.hpp"
+PmergeMe::PmergeMe(void) {
 
-class RPN {
+}
 
-private:
+PmergeMe::PmergeMe(PmergeMe const & src) {
 
-	int						_num;
-	std::deque<int>			_calc;
+	*this = src;
+}
 
-public:
+PmergeMe::~PmergeMe(void) {
 
-	RPN(void);
-	RPN(RPN const & src);
-	~RPN(void);
+}
 
-	RPN&	operator=(RPN const & src);
-	void	calc(char* str);
-	void	init_stack(char* str);
-	int		math(int a, int b, int op);
+PmergeMe& PmergeMe::operator=(PmergeMe const & src) {
 
-};
+	if (this != &src)
+	{
 
-#endif
+	}
+	return *this;
+}

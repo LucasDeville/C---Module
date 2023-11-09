@@ -1,37 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   RPN.hpp                                            :+:      :+:    :+:   */
+/*   PmergeMe.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ldeville <ldeville@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/08 16:54:27 by ldeville          #+#    #+#             */
-/*   Updated: 2023/11/09 14:13:52 by ldeville         ###   ########.fr       */
+/*   Created: 2023/11/09 14:10:31 by ldeville          #+#    #+#             */
+/*   Updated: 2023/11/09 14:17:09 by ldeville         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef	__RPN_HPP__
-#define	__RPN_HPP__
+#ifndef __PMERGEME_HPP__
+#define __PMERGEME_HPP__
 
 #include "common.hpp"
 
-class RPN {
+template<typename T<int>>
+class PmergeMe<T> {
 
 private:
 
-	int						_num;
-	std::deque<int>			_calc;
+	T<int>	_stack;
 
 public:
 
-	RPN(void);
-	RPN(RPN const & src);
-	~RPN(void);
+	PmergeMe(void);
+	PmergeMe(PmergeMe const & src);
+	~PmergeMe(void);
 
-	RPN&	operator=(RPN const & src);
-	void	calc(char* str);
-	void	init_stack(char* str);
-	int		math(int a, int b, int op);
+	PmergeMe&	operator=(PmergeMe const & src);
 
 };
 

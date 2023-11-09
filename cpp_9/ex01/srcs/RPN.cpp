@@ -6,7 +6,7 @@
 /*   By: ldeville <ldeville@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/08 17:11:48 by ldeville          #+#    #+#             */
-/*   Updated: 2023/11/09 12:46:32 by ldeville         ###   ########.fr       */
+/*   Updated: 2023/11/09 14:19:30 by ldeville         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,9 @@ RPN&	RPN::operator=(RPN const & src) {
 
 	if (this != &src)
 	{
-
+		this->_num = src._num;
+		this->_calc.clear();
+		this->_calc.insert(src._calc.begin(), src._calc.end());
 	}
 	return *this;
 }
@@ -58,7 +60,7 @@ void	RPN::calc(char* str) {
 	this->_num = 0;
 
 	init_stack(str);
-	std::vector<int>::iterator it = this->_calc.begin();
+	std::deque<int>::iterator it = this->_calc.begin();
 	_num = math(*it, *++it, *++it);
 	for (it = this->_calc.begin() + 3; it != this->_calc.end(); ++it)
 	{
@@ -98,7 +100,7 @@ void	RPN::init_stack(char* str) {
 		i++;
 	}
 	
-	std::vector<int>::iterator it = this->_calc.begin();
+	std::deque<int>::iterator it = this->_calc.begin();
 	if (!(*it < 10) || !(*++it < 10) || *++it < 10)
 	{
 		std::cout << "Error: The first two arguments must be numbers and then a token" << std::endl;

@@ -1,38 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   RPN.hpp                                            :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ldeville <ldeville@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/08 16:54:27 by ldeville          #+#    #+#             */
-/*   Updated: 2023/11/09 14:13:52 by ldeville         ###   ########.fr       */
+/*   Created: 2023/11/03 14:26:58 by ldeville          #+#    #+#             */
+/*   Updated: 2023/11/09 15:39:29 by ldeville         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef	__RPN_HPP__
-#define	__RPN_HPP__
-
 #include "common.hpp"
+#include "PmergeMe.hpp"
 
-class RPN {
+int	main(int argc, char **argv) {
 
-private:
+    if (argc != 2)
+    {
+        std::cout << "Error" << std::endl;
+        return (-1);
+    }
+    
+    PmergeMe<std::vector> test;
+    
 
-	int						_num;
-	std::deque<int>			_calc;
-
-public:
-
-	RPN(void);
-	RPN(RPN const & src);
-	~RPN(void);
-
-	RPN&	operator=(RPN const & src);
-	void	calc(char* str);
-	void	init_stack(char* str);
-	int		math(int a, int b, int op);
-
-};
-
-#endif
+    
+    return (0);
+}
