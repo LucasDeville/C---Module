@@ -6,7 +6,7 @@
 /*   By: ldeville <ldeville@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/09 14:10:31 by ldeville          #+#    #+#             */
-/*   Updated: 2023/11/09 14:17:09 by ldeville         ###   ########.fr       */
+/*   Updated: 2023/11/10 15:37:57 by ldeville         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,21 +15,21 @@
 
 #include "common.hpp"
 
-template<typename T<int>>
-class PmergeMe<T> {
+template<typename T>
+class PmergeMe {
 
 private:
 
-	T<int>	_stack;
+	T	_stack;
 
 public:
 
-	PmergeMe(void);
+	PmergeMe(void) { };
 	PmergeMe(PmergeMe const & src);
-	~PmergeMe(void);
+	~PmergeMe(void) { };
 
 	PmergeMe&	operator=(PmergeMe const & src);
-
+	void		setArg(char** arg);
 };
 
 #endif
