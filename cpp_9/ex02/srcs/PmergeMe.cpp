@@ -6,7 +6,7 @@
 /*   By: ldeville <ldeville@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/09 14:18:06 by ldeville          #+#    #+#             */
-/*   Updated: 2023/11/13 15:46:34 by ldeville         ###   ########.fr       */
+/*   Updated: 2023/11/14 10:17:29 by ldeville         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,22 @@ void	PmergeMe<T>::setArg(char** arg) {
 
 	for (size_t i = 0; i < this->_stack.size(); i++)
 		std::cout << _stack[i] << std::endl;
+}
+
+
+template<typename T>
+void	PmergeMe<T>::sort(void) {
+
+	T<int>	stack_l;
+	T<int>	stack_r;
+	int		i = 0;
+
+	while (i < this->_stack.size() / 2)
+		stack_l.push_back(_stack[i++]);
+	while(i < this->_stack.size())
+		stack_r.push_back(_stack[i++]);
+
+	sortPair
 }
 
 template<typename T>
