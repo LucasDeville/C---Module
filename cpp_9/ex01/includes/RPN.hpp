@@ -6,7 +6,7 @@
 /*   By: ldeville <ldeville@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/08 16:54:27 by ldeville          #+#    #+#             */
-/*   Updated: 2023/11/09 14:13:52 by ldeville         ###   ########.fr       */
+/*   Updated: 2023/11/13 14:21:51 by ldeville         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ class RPN {
 private:
 
 	int						_num;
-	std::deque<int>			_calc;
+	std::list<int>			_calc;
 
 public:
 

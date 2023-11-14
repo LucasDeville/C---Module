@@ -6,7 +6,7 @@
 /*   By: ldeville <ldeville@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/08 17:11:48 by ldeville          #+#    #+#             */
-/*   Updated: 2023/11/09 14:19:30 by ldeville         ###   ########.fr       */
+/*   Updated: 2023/11/13 15:09:33 by ldeville         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ RPN&	RPN::operator=(RPN const & src) {
 	{
 		this->_num = src._num;
 		this->_calc.clear();
-		this->_calc.insert(src._calc.begin(), src._calc.end());
+		std::copy(src._calc.begin(),  src._calc.end(), std::back_inserter(this->_calc));
 	}
 	return *this;
 }
@@ -49,7 +49,7 @@ int	RPN::math(int a, int b, int op)
 		case '*':
 			return a * b;
 		default:
-			std::cout << "Error: Accepted token are only '+ - / *'" << std::endl;
+			std::cout << a << b << op << "Error: Accepted token are only '+ - / *'" << std::endl;
 			exit(EXIT_FAILURE);
 	}
 }
@@ -60,17 +60,25 @@ void	RPN::calc(char* str) {
 	this->_num = 0;
 
 	init_stack(str);
-	std::deque<int>::iterator it = this->_calc.begin();
-	_num = math(*it, *++it, *++it);
-	for (it = this->_calc.begin() + 3; it != this->_calc.end(); ++it)
+
+	std::list<int>::iterator it = this->_calc.begin();
+	for (it = this->_calc.begin(); it != this->_calc.end(); ++it)
 	{
 		if (*it < 10 && a == 0)
 			a = *it;
 		else if (*it < 10 && a != 0)
 		{
 			a = math(a, *it, *++it);
-			this->_num = math(this->_num, a, *++it);
-			a = 0;
+			if (*++it < 10)
+			{
+				this->_num = a;
+				a = *it;
+			}
+			else
+			{
+				this->_num = math(this->_num, a, *it);
+				a = 0;
+			}
 		}
 		else
 		{
@@ -100,7 +108,7 @@ void	RPN::init_stack(char* str) {
 		i++;
 	}
 	
-	std::deque<int>::iterator it = this->_calc.begin();
+	std::list<int>::iterator it = this->_calc.begin();
 	if (!(*it < 10) || !(*++it < 10) || *++it < 10)
 	{
 		std::cout << "Error: The first two arguments must be numbers and then a token" << std::endl;
