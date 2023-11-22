@@ -6,7 +6,7 @@
 /*   By: ldeville <ldeville@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/24 12:54:28 by ldeville          #+#    #+#             */
-/*   Updated: 2023/11/22 15:25:59 by ldeville         ###   ########.fr       */
+/*   Updated: 2023/11/22 15:37:45 by ldeville         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -93,8 +93,8 @@ bool Fixed::operator==(Fixed const & src) const {
 
 bool Fixed::operator!=(Fixed const & src) const {
 	if (this->_num == src.getRawBits())
-		return true;
-	return false;
+		return false;
+	return true;
 }
 
 Fixed Fixed::operator+(Fixed const & src) const {
