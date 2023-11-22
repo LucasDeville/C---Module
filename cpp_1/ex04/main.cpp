@@ -6,7 +6,7 @@
 /*   By: ldeville <ldeville@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/19 17:25:03 by ldeville          #+#    #+#             */
-/*   Updated: 2023/10/23 11:24:59 by ldeville         ###   ########.fr       */
+/*   Updated: 2023/11/22 10:48:30 by ldeville         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ int	main(int argc, char **argv) {
 	file.open(argv[1], std::fstream::in);
 	if (!file)
 	{
-		std::cout << "The file " << argv[1] << " does not exist !" << std::endl;
+		std::cout << "The file " << argv[1] << " does not exist or you don't have enough permissions !" << std::endl;
 		return (EXIT_FAILURE);
 	}
 	while (!file.eof() && file >> std::noskipws >> c)

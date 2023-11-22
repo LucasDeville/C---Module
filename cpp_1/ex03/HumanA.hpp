@@ -6,7 +6,7 @@
 /*   By: ldeville <ldeville@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/23 09:23:33 by ldeville          #+#    #+#             */
-/*   Updated: 2023/10/23 11:30:58 by ldeville         ###   ########.fr       */
+/*   Updated: 2023/11/22 10:37:11 by ldeville         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ class HumanA {
 private:
 
 	std::string	_name;
-	Weapon*		_weapon;
+	Weapon&		_weapon;
 
 public:
 

@@ -6,7 +6,7 @@
 /*   By: ldeville <ldeville@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/19 17:26:51 by ldeville          #+#    #+#             */
-/*   Updated: 2023/10/19 18:25:25 by ldeville         ###   ########.fr       */
+/*   Updated: 2023/11/22 10:23:38 by ldeville         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 #include <iostream>
 
 class Zombie {
+	
 private :
 	std::string	_name;
 
