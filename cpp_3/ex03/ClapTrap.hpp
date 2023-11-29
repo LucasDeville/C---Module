@@ -6,7 +6,7 @@
 /*   By: ldeville <ldeville@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/26 16:47:08 by ldeville          #+#    #+#             */
-/*   Updated: 2023/10/27 10:36:16 by ldeville         ###   ########.fr       */
+/*   Updated: 2023/11/29 14:47:01 by ldeville         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ const bool	DEBUG = true;
 
 class ClapTrap {
 
-private:
+protected:
 
 	std::string	_name;
 	int			_HP;
