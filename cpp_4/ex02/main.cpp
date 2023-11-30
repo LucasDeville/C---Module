@@ -6,7 +6,7 @@
 /*   By: ldeville <ldeville@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/19 17:25:03 by ldeville          #+#    #+#             */
-/*   Updated: 2023/10/28 09:46:05 by ldeville         ###   ########.fr       */
+/*   Updated: 2023/11/30 10:22:31 by ldeville         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,13 +15,13 @@
 
 int	main(void) {
 
-	const AAnimal* j = new Dog();
-	const AAnimal* i = new Cat();
+	const Animal* j = new Dog();
+	const Animal* i = new Cat();
 	
 	delete j;//should not create a leak
 	delete i;
 
-	const AAnimal* zoo[10];
+	const Animal* zoo[10];
 
 	for (int i = 0; i < 10; i++)
 	{

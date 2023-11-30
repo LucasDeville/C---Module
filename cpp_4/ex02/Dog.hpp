@@ -6,15 +6,15 @@
 /*   By: ldeville <ldeville@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/26 16:47:08 by ldeville          #+#    #+#             */
-/*   Updated: 2023/10/28 09:41:52 by ldeville         ###   ########.fr       */
+/*   Updated: 2023/11/30 10:17:23 by ldeville         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
-#include "AAnimal.hpp"
+#include "Animal.hpp"
 #include "Brain.hpp"
 
-class Dog : public AAnimal {
+class Dog : public Animal {
 
 private:
 

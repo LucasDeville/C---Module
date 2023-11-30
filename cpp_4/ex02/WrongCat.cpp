@@ -6,12 +6,12 @@
 /*   By: ldeville <ldeville@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/26 16:52:10 by ldeville          #+#    #+#             */
-/*   Updated: 2023/10/28 09:47:00 by ldeville         ###   ########.fr       */
+/*   Updated: 2023/11/30 10:17:23 by ldeville         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "WrongCat.hpp"
-#include "AAnimal.hpp"
+#include "Animal.hpp"
 
 WrongCat::WrongCat(void) {
 

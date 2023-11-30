@@ -1,7 +1,7 @@
 MAKEFLAGS += --silent
 CC = c++
 CFLAGS = -Wall -Wextra -Werror -std=c++98 -Wshadow -Wno-shadow
-SRCS = main.cpp AAnimal.cpp Dog.cpp Cat.cpp WrongAnimal.cpp WrongCat.cpp Brain.cpp
+SRCS = main.cpp Animal.cpp Dog.cpp Cat.cpp WrongAnimal.cpp WrongCat.cpp Brain.cpp
 OBJS_EXEC = ${SRCS:.cpp=.o}
 EXEC = Polymorphism
 

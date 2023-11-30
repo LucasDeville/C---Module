@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   AAnimal.hpp                                         :+:      :+:    :+:   */
+/*   Animal.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ldeville <ldeville@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/26 16:47:08 by ldeville          #+#    #+#             */
-/*   Updated: 2023/10/28 09:41:09 by ldeville         ###   ########.fr       */
+/*   Updated: 2023/11/30 10:19:57 by ldeville         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 const bool	DEBUG = true;
 
-class AAnimal {
+class Animal {
 
 protected:
 
@@ -22,11 +22,11 @@ protected:
 
 public:
 
-	AAnimal(void);
-	AAnimal(AAnimal const & src);
-	virtual ~AAnimal(void);
+	Animal(void);
+	Animal(Animal const & src);
+	virtual ~Animal(void);
 
-	AAnimal& 		operator=(AAnimal const & src);
+	Animal& 		operator=(Animal const & src);
 	virtual void	makeSound(void) const = 0;
 	std::string		getType() const;
 };

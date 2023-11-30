@@ -6,7 +6,7 @@
 /*   By: ldeville <ldeville@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/19 17:25:03 by ldeville          #+#    #+#             */
-/*   Updated: 2023/10/27 15:10:03 by ldeville         ###   ########.fr       */
+/*   Updated: 2023/11/30 10:09:30 by ldeville         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ int	main(void) {
 
     std::cout << "Wrong Type: " << wrong->getType() << " " << std::endl;
     std::cout << "WrongCat Type: " << wrongCat->getType() << " " << std::endl;
-    std::cout << "WrongCat Type: " << Cat->getType() << " " << std::endl;
+    std::cout << "Cat Type: " << Cat->getType() << " " << std::endl;
     wrong->makeSound();
     wrongCat->makeSound();
     Cat->makeSound();

@@ -11,7 +11,7 @@
 /* ************************************************************************** */
 
 #include "Brain.hpp"
-#include "AAnimal.hpp"
+#include "Animal.hpp"
 
 Brain::Brain(void) {
 
