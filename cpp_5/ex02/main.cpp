@@ -6,7 +6,7 @@
 /*   By: ldeville <ldeville@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/19 17:25:03 by ldeville          #+#    #+#             */
-/*   Updated: 2023/11/01 09:31:19 by ldeville         ###   ########.fr       */
+/*   Updated: 2024/01/02 13:36:41 by ldeville         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,10 +29,8 @@ int	main(void) {
 		std::cout << form << std::endl;
 		test.signForm(form);
 		std::cout << form << std::endl;
-		//test.executeForm(form);
 		test.setGrade(145);
 		test.signForm(form);
-		//test.executeForm(form);
 		std::cout << form << std::endl;
 		test.setGrade(137);
 		test.executeForm(form);
