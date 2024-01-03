@@ -6,7 +6,7 @@
 /*   By: ldeville <ldeville@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/01 10:25:05 by ldeville          #+#    #+#             */
-/*   Updated: 2023/11/03 10:34:27 by ldeville         ###   ########.fr       */
+/*   Updated: 2024/01/03 14:22:19 by ldeville         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 int	main(void) {
 
     Array<std::string> test(4);
+    Array<std::string> test1(0);
 
     std::cout << "  ~TEST~  " << std::endl;
     test[0] = "Ceci";
