@@ -6,7 +6,7 @@
 /*   By: ldeville <ldeville@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/03 14:26:58 by ldeville          #+#    #+#             */
-/*   Updated: 2023/11/14 09:45:14 by ldeville         ###   ########.fr       */
+/*   Updated: 2024/01/09 16:14:26 by ldeville         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,9 @@ int	main(int argc, char **argv) {
     
     displayValue(argc, argv);
     test.displayResult();
+    
+    test.time();
+    test2.time();
 
     return (0);
 }
