@@ -6,7 +6,7 @@
 /*   By: ldeville <ldeville@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/09 14:18:06 by ldeville          #+#    #+#             */
-/*   Updated: 2024/01/09 16:48:16 by ldeville         ###   ########.fr       */
+/*   Updated: 2024/01/10 16:21:55 by ldeville         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,22 +29,32 @@ PmergeMe<T>& PmergeMe<T>::operator=(PmergeMe<T> const & src) {
 }
 
 template<typename T>
-void	PmergeMe<T>::setArg(char** arg) {
+int	PmergeMe<T>::setArg(char** arg) {
 
 	int	i = 0;
 	while (arg[i])
+	{
+		if (atoi(arg[i]) < 0)
+			return (0);
 		this->_stack.push_back(atoi(arg[i++]));
+	}
+
+	for(unsigned long i = 0; i != _stack.size(); i++)
+		std::cout << _stack[i] << std::endl;
+
+	return (1);
 }
 
 
 template<typename T>
 void	PmergeMe<T>::sort(void) {
 
-	std::clock_t start = std::clock();
+	bool			isPair = _stack.size() % 2 == 0 ? true : false;
+	std::clock_t	start = std::clock();
     pair_vector pairs = generate_pairs(_stack);
     int_vector insertionIndexes = generate_indexes(_stack.size());
 
-    // If the input is empty, we just need to push the last element
+	// If the input is empty, we just need to push the last element
     if (pairs.size() == 0) {
         _stack.push_back(_last);
         _time = static_cast<double>(std::clock() - start) / CLOCKS_PER_SEC;
@@ -53,6 +63,7 @@ void	PmergeMe<T>::sort(void) {
 
     sort_pairs(pairs);
 
+		
     _stack.clear();
 
     _stack.push_back(pairs[0].second);
@@ -76,8 +87,8 @@ void	PmergeMe<T>::sort(void) {
         _stack.insert(_stack.begin() + index, _last);
     }
 
-	for(int i = 0; i < 1000000; i++);
-	
+	if (isPair)
+		_stack.erase(_stack.begin());
 	_time = static_cast<double>(std::clock() - start) / CLOCKS_PER_SEC;
 }
 
@@ -210,12 +221,12 @@ std::string getContainerName();
 
 template <>
 std::string getContainerName<std::vector<int> >() {
-    return "vector<int>";
+    return "vector";
 }
 
 template <>
 std::string getContainerName<std::deque<int> >() {
-    return "deque<int>";
+    return "deque";
 }
 
 template<typename T>

@@ -6,7 +6,7 @@
 /*   By: ldeville <ldeville@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/03 14:26:58 by ldeville          #+#    #+#             */
-/*   Updated: 2024/01/09 16:14:26 by ldeville         ###   ########.fr       */
+/*   Updated: 2024/01/10 16:04:08 by ldeville         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,11 @@ int	main(int argc, char **argv) {
     ++argv;
     
     PmergeMe< std::vector<int> > test;
-    test.setArg(argv);
+    if (!test.setArg(argv))
+    {
+        std::cout << "Error" << std::endl;
+        return (-1);
+    }
     test.sort();
 
     PmergeMe< std::deque<int> > test2;

@@ -6,7 +6,7 @@
 /*   By: ldeville <ldeville@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/09 14:10:31 by ldeville          #+#    #+#             */
-/*   Updated: 2024/01/09 16:44:57 by ldeville         ###   ########.fr       */
+/*   Updated: 2024/01/10 16:03:54 by ldeville         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ public:
 	~PmergeMe(void) { };
 
 	PmergeMe&	operator=(PmergeMe const & src);
-	void		setArg(char** arg);
+	int			setArg(char** arg);
 	void		displayResult(void);
 	void		sort(void);
 	void		time() const;
