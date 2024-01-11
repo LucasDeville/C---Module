@@ -6,7 +6,7 @@
 /*   By: ldeville <ldeville@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/06 17:50:21 by ldeville          #+#    #+#             */
-/*   Updated: 2023/11/08 16:49:38 by ldeville         ###   ########.fr       */
+/*   Updated: 2024/01/11 11:16:31 by ldeville         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -111,18 +111,38 @@ double	BitcoinExchange::getValue(std::string date) {
 
 bool	BitcoinExchange::badInputData(std::string str) {
 
+	if (!str[0] || (str[0] && (str[0] == '\n' || !isdigit(str[0]))))
+		return true;
 	int	year = atoi((str.substr(0, 4)).c_str());
 	int	month = atoi((str.substr(5, 2)).c_str());
 	int	day = atoi((str.substr(8, 2)).c_str());
+	if (checkNumber(&str[12]))
+		return true;
 	if (str.size() < 11 || str[4] != '-' || str[7] != '-' || str[11] != '|')
 		return true;
-	else if (year < 2009 || year > 2022)
+	else if (year < 2009 /*|| year > 2022*/)
 		return true;
 	else if (month < 1 || month > 12)
 		return true;
 	else if (day < 1 || day > 31)
-		return true;		
+		return true;
 	return false;
+}
+
+int	BitcoinExchange::checkNumber(std::string str) const {
+
+	int i = 0;
+	int	point = 0;
+
+	while (str[i])
+	{
+		if (str[i] == '.')
+			point++;
+		i++;
+	}
+	if (point > 1)
+		return 1;
+	return 0;
 }
 
 void	BitcoinExchange::execute_exchange(void) {
